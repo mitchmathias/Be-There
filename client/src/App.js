@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+// import Feed from './components/Feed';
+import Footer from './components/Footer';
+// import Login from './components/Login';
+import Nav from './components/Nav';
+// import Search from './components/Search';
+// import Signup from './components/Signup';
+import Title from './components/Title';
+import Wrapper from './components/Wrapper';
+import EventCard from './components/EventCard';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Wrapper>
+        <Title />
+        <Nav />
+        <EventCard />
+        <Footer />
+      </Wrapper>
+    </BrowserRouter>
   );
 }
 
