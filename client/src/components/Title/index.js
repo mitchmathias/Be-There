@@ -1,9 +1,14 @@
 import React from 'react';
-import './style.css'
+import '../../style.css'
 
 function Title () {
     return (
-        <div></div>
+        <div className="jumbotron jumbotron-fluid">
+  <div className="container">
+    <h1 className="display-4">Be There</h1>
+    <p className="lead">"Be the change you want to see in the world" - Ghandi</p>
+  </div>
+</div>
     )
 };
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import './style.css'
+import '../../style.css'
 
-function Wrapper () {
-    return (
-        <div></div>
-    )
+function Wrapper (props) {
+    return  <main className="wrapper" {...props} />
+
 };
 
 export default Wrapper 
