@@ -8,8 +8,8 @@ import Signup from './components/Signup';
 import Title from './components/Title';
 import Wrapper from './components/Wrapper';
 import EventCard from './components/EventCard';
-import './App.css';
 import { BrowserRouter } from 'react-router-dom';
+import './App.css';
 
 function App() {
   const [tab, setTab] = useState("about");
