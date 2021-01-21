@@ -25,6 +25,19 @@ function Login() {
         }
     }
 
+    handleInputChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setSearch(value);
+      };
+    
+      handleFormSubmit = (event) => {
+        event.preventDefault();
+        API.search(search)
+        .then(res=>setResults(res.items))
+        .catch(err=>console.log(err));
+      }
+
 
     return (
         <form id="login-form" class="needs-validation" novalidate onSubmit={this.loginUser}>
@@ -34,7 +47,7 @@ function Login() {
                     class="form-control"
                     id="email-input"
                     required value={this.state.value}
-                    onChange={this.handleChange} />
+                    onChange={this.handleInputChange} />
             </div>
             <div class="form-group">
                 <label for="Password">Password </label>
@@ -42,7 +55,7 @@ function Login() {
                     class="form-control"
                     id="password-input"
                     required value={this.state.value}
-                    onChange={this.handleChange} />
+                    onChange={this.handleInputChange} />
                 <div id="alert"></div>
             </div>
             <div class="form-group">
