@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const eventController = require("../../controllers/eventController");
+const eventController = require("../../controllers/eventsController");
 
 // Matches with "/api/events"
 router.route("/")
