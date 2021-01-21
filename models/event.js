@@ -20,8 +20,6 @@ const EventSchema = new Schema({
     }
 });
 
-EventSchema.set('toObject', { getters: true });
-EventSchema.set('toJSON', { getters: true });
 
 
 
