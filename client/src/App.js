@@ -12,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const [tab, setTab] = useState("about");
+  const [tab, setTab] = useState("opps");
 
   const clickOpps = () => {
     setTab("opps")
