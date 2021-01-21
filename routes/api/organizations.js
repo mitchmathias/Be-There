@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const orgController = require("../../controllers/orgController");
+const orgsController = require("../../controllers/orgsController");
 
 // Matches with "/api/organizations"
 router.route("/")
-    .get(orgController.findAll)
-    .post(orgController.create);
+    .get(orgsController.findAll)
+    .post(orgsController.create);
 
 router.route("/:id")
-    .get(orgController.findById)
-    .put(orgController.update)
-    .delete(orgController.remove);
+    .get(orgsController.findById)
+    .put(orgsController.update)
+    .delete(orgsController.remove);
 
 module.exports = router;
