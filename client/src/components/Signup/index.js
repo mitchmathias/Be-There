@@ -25,36 +25,36 @@ function Signup() {
     return (
         <form id="signup-form">
 
-            <div class="form-group">
+            <div className="form-group">
                 <label for="email">Email Address</label>
-                <input type="text" class="form-control" id="email-input" required />
+                <input type="text" className="form-control" id="email-input" required />
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label for="Password">Password</label>
                 <input type="password"
-                    class="form-control"
+                    className="form-control"
                     id="password-input"
                     required value={this.state.value}
                     onChange={this.handleChange} />
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
                 <label for="clearance">Clearance level</label>
                 <input type="text"
-                    class="form-control"
+                    className="form-control"
                     id="clearance-input"
                     required value={this.state.value}
                     onChange={this.handleChange} />
                 <br />
             </div>
 
-            <div class="form-group">
-                <button type="submit" id="signUp" class="button is-light">Sign Up</button>
+            <div className="form-group">
+                <button type="submit" id="signUp" className="button is-light">Sign Up</button>
             </div>
             <br />
             <div>
-                <p class="subtitle">Already have an Account?</p>
-                <a class="button is-light" href="/login">Log In</a>
+                <p className="subtitle">Already have an Account?</p>
+                <a className="button is-light" href="/login">Log In</a>
             </div>
 
         </form>
