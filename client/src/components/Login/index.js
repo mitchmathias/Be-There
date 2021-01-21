@@ -1,75 +1,105 @@
+  
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
-import React from "react";
-
-function Login() {
-    module.exports = {
-        login: (req, res) => {
-            db.User.findOne({
-                where: {
-                    email: req.body.email
-                }
-            }).then(async function (userData) {
-                if (!userData) {
-                    res.send({ user: false, message: "Incorrect user email" });
-                    return
-                }
-                if (await brcrypt.compare(req.body.password, userData.password)) {
-                    res.send({ user: userData.id, message: "Welcome" })
-                } else {
-                    res.send({ user: false, message: "Incorrect password" });
-                }
-            }).catch(err => {
-                res.sent(err);
-                console.log(err)
-            })
+class Login extends Component {
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            redirectTo: null
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+  
     }
 
-    handleInputChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setSearch(value);
-      };
-    
-      handleFormSubmit = (event) => {
-        event.preventDefault();
-        API.search(search)
-        .then(res=>setResults(res.items))
-        .catch(err=>console.log(err));
-      }
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
 
-    return (
-        <form id="login-form" className="needs-validation" novalidate onSubmit={this.loginUser}>
-            <div className="form-group">
-                <label for="email">E-mail Address</label>
-                <input type="text"
-                    className="form-control"
-                    id="email-input"
-                    required value={this.state.value}
-                    onChange={this.handleInputChange} />
-            </div>
-            <div className="form-group">
-                <label for="Password">Password </label>
-                <input type="password"
-                    className="form-control"
-                    id="password-input"
-                    required value={this.state.value}
-                    onChange={this.handleInputChange} />
-                <div id="alert"></div>
-            </div>
-            <div className="form-group">
-                <button type="submit" className="button is-light" id="logInBtn">Log In</button>
-            </div>
-            <br />
-            <div>
-                <p className="subtitle">Don't have an Account yet?</p>
-                <a className="button is-light" href="/signup">Sign Up</a>
-            </div>
-        </form>
+        axios
+            .post('/user/login', {
+                username: this.state.username,
+                password: this.state.password
+            })
+            .then(response => {
+                console.log('login response: ')
+                console.log(response)
+                if (response.status === 200) {
+                    this.props.updateUser({
+                        loggedIn: true,
+                        username: response.data.username
+                    })
+                    this.setState({
+                        redirectTo: '/'
+                    })
+                }
+            }).catch(error => {
+                console.log('login error: ')
+                console.log(error);
+                
+            })
+    }
 
-    )
-};
+    render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <div>
+                    <h4>Login</h4>
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="username">Username</label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Username"
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="password">Password: </label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    placeholder="password"
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group ">
+                            <div className="col-7"></div>
+                            <button
+                                className="btn btn-primary col-1 col-mr-auto"
+                               
+                                onClick={this.handleSubmit}
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
+    }
+}
 
 export default Login;
-
