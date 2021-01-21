@@ -25,6 +25,8 @@
         "if-env": "^1.0.4",
         "mongoose": "^5.3.16",
         "passport": "^0.4.1",
+        "react-calendar": "^3.3.0",
         "uuid": "^8.3.2"
+
     }
 }

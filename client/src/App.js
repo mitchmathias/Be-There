@@ -12,7 +12,8 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const [tab, setTab] = useState("opps");
+ 
+  const [tab, setTab] = useState("about");
 
   const clickOpps = () => {
     setTab("opps")
@@ -39,6 +40,7 @@ function App() {
         <Footer />
       </Wrapper>
     </BrowserRouter>
+    
   );
 }
 
