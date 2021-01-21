@@ -1,75 +1,105 @@
+  
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 
-import React from "react";
-
-function Login(){
-    const loginForm = $("#login-form");
-    const emailInput = $("input#email-input");
-    const passwordInput = $("input#password-input");
+class Login extends Component {
+    constructor() {
+        super()
+        this.state = {
+            username: '',
+            password: '',
+            redirectTo: null
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
   
-    // When the form is submitted, we validate there's an email and password entered
-    loginForm.on("submit", event => {
-      event.preventDefault();
-      const userData = {
-        email: emailInput.val().trim(),
-        password: passwordInput.val().trim()
-      };
-  
-      if (!userData.email || !userData.password) {
-        return;
-      }
-  
-      // If we have an email and password we run the loginUser function and clear the form
-      loginUser(userData.email, userData.password);
-      emailInput.val("");
-      passwordInput.val("");
-    });
-  
-    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-    function loginUser(email, password) {
-      $.post("/api/login", {
-        email: email,
-        password: password
-      })
-        .then(() => {
-          window.location.replace("/search");
-          // If there's an error, log the error
-        })
-        .catch(err => {
-          console.log(err);
-        });
     }
 
+    handleChange(event) {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
-    return(
-      <form id="login-form" class="needs-validation" novalidate onSubmit={this.loginUser}>
-        <div class="form-group">
-          <label for="email">E-mail Address</label>
-          <input type="text" 
-          class="form-control" 
-          id="email-input" 
-          required value={this.state.value} 
-          onChange={this.handleChange}/>
-        </div>
-        <div class="form-group">
-          <label for="Password">Password </label>
-          <input type="password" 
-          class="form-control" 
-          id="password-input" 
-          required value={this.state.value} 
-          onChange={this.handleChange} />
-          <div id="alert"></div>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="button is-light" id="logInBtn">Log In</button>
-        </div>
-        <br />
-        <div>
-          <p class="subtitle">Don't have an Account yet?</p>
-          <a class="button is-light" href="/signup">Sign Up</a>
-        </div>
-      </form>
+    handleSubmit(event) {
+        event.preventDefault()
+        console.log('handleSubmit')
 
-    )};
+        axios
+            .post('/user/login', {
+                username: this.state.username,
+                password: this.state.password
+            })
+            .then(response => {
+                console.log('login response: ')
+                console.log(response)
+                if (response.status === 200) {
+                    this.props.updateUser({
+                        loggedIn: true,
+                        username: response.data.username
+                    })
+                    this.setState({
+                        redirectTo: '/'
+                    })
+                }
+            }).catch(error => {
+                console.log('login error: ')
+                console.log(error);
+                
+            })
+    }
+
+    render() {
+        if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
+            return (
+                <div>
+                    <h4>Login</h4>
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="username">Username</label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Username"
+                                    value={this.state.username}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="col-1 col-ml-auto">
+                                <label className="form-label" htmlFor="password">Password: </label>
+                            </div>
+                            <div className="col-3 col-mr-auto">
+                                <input className="form-input"
+                                    placeholder="password"
+                                    type="password"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group ">
+                            <div className="col-7"></div>
+                            <button
+                                className="btn btn-primary col-1 col-mr-auto"
+                               
+                                onClick={this.handleSubmit}
+                                type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
+    }
+}
 
 export default Login;
-
