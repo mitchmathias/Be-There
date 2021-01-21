@@ -3,7 +3,6 @@ import Feed from './components/Feed';
 import Footer from './components/Footer';
 import Login from './components/Login';
 import Nav from './components/Nav';
-import Calendar from "react-calendar";
 // import Search from './components/Search';
 import Signup from './components/Signup';
 import Title from './components/Title';
@@ -13,7 +12,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  const [value, onChange] = useState(new Date());
+ 
   const [tab, setTab] = useState("about");
 
   const clickOpps = () => {
@@ -38,7 +37,6 @@ function App() {
         {tab === 'events' && <EventCard />}
         {tab === 'signup' && <Signup />}
         {tab === 'login' && <Login />}
-        <Calendar onChange={onChange} value={value}/>
         <Footer />
       </Wrapper>
     </BrowserRouter>
