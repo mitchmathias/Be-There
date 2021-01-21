@@ -40,31 +40,31 @@ function Login() {
 
 
     return (
-        <form id="login-form" class="needs-validation" novalidate onSubmit={this.loginUser}>
-            <div class="form-group">
+        <form id="login-form" className="needs-validation" novalidate onSubmit={this.loginUser}>
+            <div className="form-group">
                 <label for="email">E-mail Address</label>
                 <input type="text"
-                    class="form-control"
+                    className="form-control"
                     id="email-input"
                     required value={this.state.value}
                     onChange={this.handleInputChange} />
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label for="Password">Password </label>
                 <input type="password"
-                    class="form-control"
+                    className="form-control"
                     id="password-input"
                     required value={this.state.value}
                     onChange={this.handleInputChange} />
                 <div id="alert"></div>
             </div>
-            <div class="form-group">
-                <button type="submit" class="button is-light" id="logInBtn">Log In</button>
+            <div className="form-group">
+                <button type="submit" className="button is-light" id="logInBtn">Log In</button>
             </div>
             <br />
             <div>
-                <p class="subtitle">Don't have an Account yet?</p>
-                <a class="button is-light" href="/signup">Sign Up</a>
+                <p className="subtitle">Don't have an Account yet?</p>
+                <a className="button is-light" href="/signup">Sign Up</a>
             </div>
         </form>
 
