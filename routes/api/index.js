@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const eventRoutes = require("./events.js");
+const eventRoutes = require("./events");
 const orgRoutes = require("./organizations");
 const volunteerRoutes = require("./volunteers");
 //Event routes
