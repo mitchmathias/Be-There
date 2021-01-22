@@ -1,9 +1,6 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-require('mongoose-uuid2')(mongoose);
-mongoose.promise = Promise
-
+const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
 

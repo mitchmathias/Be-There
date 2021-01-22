@@ -1,38 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../../controllers/volunteersController');
-const passport = require('passport')
+const passport = require('passport');
 
-
-
-router.post('/', (req, res) => {
-
-    const { username, password, email, firstName, lastName, city } = req.body
-
-    User.findOne({ username: username }, (err, user) => {
-        if (err) {
-            console.log('User post error: ', err)
-        } else if (user) {
-            res.json({
-                error: `${username} is already taken`
-            })
-        }
-        else {
-            const newUser = new User({
-                username: username,
-                password: password,
-                email: email,
-                firstName: firstName,
-                lastName: lastName,
-                city: city
-            })
-            newUser.save((err, savedUser) => {
-                if (err) return res.json(err)
-                res.json(savedUser)
-            })
-        }
-    })
-})
+router.post('/', User.create);
 
 router.post(
     '/login',
