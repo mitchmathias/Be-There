@@ -58,7 +58,7 @@ class Signup extends Component {
 				<div className="col-4">
 					<div className="signupForm card">
 						<div className="card-body">
-							<h1 className="col-7">Sign up</h1>
+							<h1 className="col-6 card-title">Sign up</h1>
 							<form className="form-horizontal">
 								<div className="form-group">
 									<div className="col-6 col-ml-auto">
@@ -153,7 +153,7 @@ class Signup extends Component {
 											className="btn btn-primary col-mr-auto"
 											onClick={this.handleSubmit}
 											type="submit"
-										>Sign up</button>
+										><h5>Sign up</h5></button>
 									</div>
 								</div>
 							</form>

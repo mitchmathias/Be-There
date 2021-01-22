@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Nav from './components/Nav';
 // import Search from './components/Search';
 import Signup from './components/Signup';
-import Title from './components/Title';
+import Jumbotron from './components/Jumbotron';
 import Wrapper from './components/Wrapper';
 import EventCard from './components/EventCard';
 import './App.css';
@@ -32,7 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <Wrapper>
-        <Title />
+        <Jumbotron />
         <Nav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetLoginTab={clickLogin} SetSignupTab={clickSignup}/>
         {tab === 'opps' && 
         <Feed>
