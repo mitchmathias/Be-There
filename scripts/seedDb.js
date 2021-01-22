@@ -132,17 +132,17 @@ const userSeed = [
         email: "ben.takemymoney@example.com",
         password: "pass",
         location: {
-            "street": {
-                "number": 410,
-                "name": "E Little York Rd"
+            street: {
+                number: 410,
+                name: "E Little York Rd"
             },
-            "city": "Oakland",
-            "state": "California",
-            "country": "United States",
-            "postcode": 39667,
-            "coordinates": {
-                "latitude": "-44.8614",
-                "longitude": "7.0719"
+            city: "Oakland",
+            state: "California",
+            country: "United States",
+            postcode: 39667,
+            coordinates: {
+                latitude: "-44.8614",
+                longitude: "7.0719"
             }
         }
     },
