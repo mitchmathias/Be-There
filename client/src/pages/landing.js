@@ -43,7 +43,6 @@ function Landing () {
                 {tab === 'signup' && 
                     < Signup />}
 
-
                 {/* Remove Below Later */}
 
                 <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfileTab={clickProfile} />
