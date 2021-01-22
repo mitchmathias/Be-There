@@ -22,19 +22,23 @@ const userSchema = new Schema({
 		required: [true, "can't be blank"],
 		match: [/\S+@\S+\.\S+/, 'is invalid'],
         index: true},
-    firstName:{
+    name:{
         type: String,
         lowercase: true,
         required: true
     },
-    lastName:{
-        type: String,
-        lowercase: true,
-        required: true
-    },
-	city:{
-		type: String
-	}
+	location: {
+		type: {
+		  type: String, 
+		  enum: ['Point'],
+		  required: true
+		},
+		coordinates: {
+		  type: [Number],
+		  required: true
+		}
+	  } 
+	
 })
 
 userSchema.methods = {
