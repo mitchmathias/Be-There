@@ -54,15 +54,15 @@ class Signup extends Component {
 
 	render() {
 		return (
-			<div className="row">
-				<div className="col-3">
-					<div className="signupForm card border-primary">
+			<div className="row signup d-flex justify-content-center">
+				<div className="col-4">
+					<div className="signupForm card">
 						<div className="card-body">
-							<h4 className="col-7">Sign up</h4>
+							<h1 className="col-7">Sign up</h1>
 							<form className="form-horizontal">
 								<div className="form-group">
 									<div className="col-6 col-ml-auto">
-										<label className="form-label" htmlFor="firstName">First Name: </label>
+										<label className="form-label" htmlFor="firstName"><h4>First Name:</h4> </label>
 									</div>
 									<div className="col-6 col-mr-auto">
 										<input className="form-input"
@@ -76,7 +76,7 @@ class Signup extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-6 col-ml-auto">
-										<label className="form-label" htmlFor="lastName">Last Name: </label>
+										<label className="form-label" htmlFor="lastName"><h4>Last Name:</h4> </label>
 									</div>
 									<div className="col-6 col-mr-auto">
 										<input className="form-input"
@@ -90,7 +90,7 @@ class Signup extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-3 col-ml-auto">
-										<label className="form-label" htmlFor="email">Email</label>
+										<label className="form-label" htmlFor="email"><h4>Email:</h4></label>
 									</div>
 									<div className="col-3 col-mr-auto">
 										<input className="form-input"
@@ -105,7 +105,7 @@ class Signup extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-3 col-ml-auto">
-										<label className="form-label" htmlFor="username">Username</label>
+										<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
 									</div>
 									<div className="col-3 col-mr-auto">
 										<input className="form-input"
@@ -120,7 +120,7 @@ class Signup extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-1 col-ml-auto">
-										<label className="form-label" htmlFor="password">Password: </label>
+										<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
 									</div>
 									<div className="col-6 col-mr-auto">
 										<input className="form-input"
@@ -134,7 +134,7 @@ class Signup extends Component {
 								</div>
 								<div className="form-group">
 									<div className="col-6 col-ml-auto">
-										<label className="form-label" htmlFor="confirmPassword">Confirm Password: </label>
+										<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
 									</div>
 									<div className="col-3 col-mr-auto">
 										<input className="form-input"

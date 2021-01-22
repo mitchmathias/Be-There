@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../../controllers/volunteersController');
-const passport = require('../passport')
+const passport = require('passport')
 
 
 
