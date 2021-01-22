@@ -12,6 +12,7 @@ import HomeNav from '../components/Navs/HomeNav'
 import CreateEvent from '../components/CreateEvent'
 import Feed from '../components/Feed';
 import EventCard from '../components/EventCard';
+import MyProfile from '../components/MyProfile'
 
 function Landing () {
     const [tab, setTab] = useState("landing");
@@ -28,23 +29,32 @@ function Landing () {
     const clickEvents = () => {
         setTab("events")
     }
+    const clickProfile = () => {
+        setTab("profile")
+    }
+
     return (
         <BrowserRouter>
             <Wrapper>
                 <Welcome />
                 <LandingNav SetLoginTab={clickLogin} SetSignupTab={clickSignup}  />
-                {tab === 'login' && <Login />}
-                {tab === 'signup' && < Signup />}
+                {tab === 'login' && 
+                    <Login />}
+                {tab === 'signup' && 
+                    < Signup />}
+
                 {/* Remove Below Later */}
-                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents}
-                />
-                {tab === 'opps' &&
-                    <Feed>
-                        <EventCard />
-                    </Feed>}
+
+                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfileTab={clickProfile} />
+                {tab === 'opps' && 
+                    <EventCard />}
                 {tab === 'events' &&
                     <CreateEvent />}
+                {tab === 'profile' &&
+                    <MyProfile />}
+
                 {/* Remove Above Later  */}
+
                 <Footer />
             </Wrapper>
         </BrowserRouter>

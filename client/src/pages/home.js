@@ -7,7 +7,7 @@ import Jumbotron from '../components/Jumbotron';
 import Wrapper from '../components/Wrapper';
 import EventCard from '../components/EventCard';
 import HomeNav from '../components/Navs/HomeNav';
-
+import MyProfile from '../components/MyProfile';
 
 
 function Home () {
@@ -19,18 +19,22 @@ function Home () {
     const clickEvents = () => {
         setTab("events")
     }
+    const clickProfile = () => {
+        setTab("profile")
+    }
 
     return (
         <BrowserRouter>
             <Wrapper>
                 <Jumbotron />
-                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents}  />
+                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfiletab={clickProfile} />
                 {tab === 'opps' &&
                     <Feed>
                         <EventCard />
                     </Feed>}
                 {tab === 'events' &&
                     <CreateEvent />}
+                {tab === 'profile' && <MyProfile />}
                 <Footer />
             </Wrapper>
         </BrowserRouter>

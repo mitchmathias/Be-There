@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './style.css'
 
-function Nav(props) {
+function LandingNav(props) {
     return (
         <div className="row signup d-flex justify-content-center">
             <div className="col-4">
@@ -23,4 +23,4 @@ function Nav(props) {
     )
 };
 
-export default Nav 
+export default LandingNav 
