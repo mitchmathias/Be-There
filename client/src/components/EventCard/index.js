@@ -23,8 +23,6 @@ function EventCard() {
                 </div>
             </div>
         </div>
-
-
     )
 }
 

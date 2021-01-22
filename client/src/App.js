@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import CreateEvent from './components/CreateEvent'
 import Feed from './components/Feed';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -8,12 +10,11 @@ import Signup from './components/Signup';
 import Title from './components/Title';
 import Wrapper from './components/Wrapper';
 import EventCard from './components/EventCard';
-import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 
 function App() {
  
-  const [tab, setTab] = useState("about");
+  const [tab, setTab] = useState("signup");
 
   const clickOpps = () => {
     setTab("opps")
@@ -33,8 +34,12 @@ function App() {
       <Wrapper>
         <Title />
         <Nav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetLoginTab={clickLogin} SetSignupTab={clickSignup}/>
-        {tab === 'opps' && <Feed />}
-        {tab === 'events' && <EventCard />}
+        {tab === 'opps' && 
+        <Feed>
+          <EventCard /> 
+        </Feed> }
+        {tab === 'events' && 
+        <CreateEvent />}
         {tab === 'signup' && <Signup />}
         {tab === 'login' && <Login />}
         <Footer />
