@@ -18,18 +18,26 @@ const userSchema = new Schema({
 		type: String,
 		 unique: false,
 		 required: true, 
-		
 		},
 	email:{
 		type: String,
 		lowercase: true,
 		required: [true, "can't be blank"],
 		match: [/\S+@\S+\.\S+/, 'is invalid'],
-		index: true},
+        index: true},
+    firstName:{
+        type: String,
+        lowercase: true,
+        required: true
+    },
+    lastName:{
+        type: String,
+        lowercase: true,
+        required: true
+    },
 	city:{
 		type: String
 	}
-
 })
 
 userSchema.methods = {

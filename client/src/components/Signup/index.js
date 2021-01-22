@@ -10,7 +10,8 @@ class Signup extends Component {
             confirmPassword: '',
             email: '',
             firstName: '',
-            lastName: ''
+            lastName: '',
+            city: ''
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -95,6 +96,20 @@ render() {
 							type="password"
 							name="password"
 							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+                <div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="confirmPassword">Confirm Password: </label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="confirmPassword"
+							type="confirmPassword"
+							name="confirmPassword"
+							value={this.state.confirmPassword}
 							onChange={this.handleChange}
 						/>
 					</div>
