@@ -15,10 +15,11 @@ module.exports = {
     },
     create:function(req,res) {
         const newUser = new User(req.body)
+        console.log("new user:", newUser)
         User
-            .create(newUser)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+            .create(req.body)
+            .then(dbModel => {console.log(dbModel); res.json(dbModel)})
+            .catch(err => {console.log(err); res.status(422).json(err)});
     },
     update: function(req,res) {
         User

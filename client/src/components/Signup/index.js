@@ -12,7 +12,7 @@ class Signup extends Component {
 			email: '',
 			firstName: '',
 			lastName: '',
-			city: ''
+			location: ''
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -32,7 +32,8 @@ class Signup extends Component {
 			password: this.state.password,
 			email: this.state.email,
 			firstName: this.state.firstName,
-			lastName: this.state.lastName
+			lastName: this.state.lastName,
+			location: this.state.location
 		})
 			.then(response => {
 				console.log(response)
