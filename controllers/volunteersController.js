@@ -19,7 +19,9 @@ module.exports = {
         User
             .create(req.body)
             .then(dbModel => {console.log(dbModel); res.json(dbModel)})
-            .catch(err => {console.log(err); res.status(422).json(err)});
+            .catch(err => {console.log(err); 
+                res.status(422).json(err); 
+                alert("The username or email you've chosen is already in use.")});
     },
     update: function(req,res) {
         User
