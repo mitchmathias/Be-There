@@ -1,14 +1,43 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const bcrypt = require('bcryptjs');
+require('mongoose-uuid2')(mongoose);
 mongoose.promise = Promise
 
 
 const userSchema = new Schema({
 
-	username: { type: String, unique: false, required: false },
-	password: { type: String, unique: false, required: false }
-
+	username: { 
+		type: String,
+		 unique: true,
+		 lowercase: true,
+		 required: [true, " Can't be blank"],
+		 match: [/^[a-zA-Z0-9]+$/, 'is invalid'],
+		 },
+	password: { 
+		type: String,
+		 unique: false,
+		 required: true, 
+		},
+	email:{
+		type: String,
+		lowercase: true,
+		required: [true, "can't be blank"],
+		match: [/\S+@\S+\.\S+/, 'is invalid'],
+        index: true},
+    firstName:{
+        type: String,
+        lowercase: true,
+        required: true
+    },
+    lastName:{
+        type: String,
+        lowercase: true,
+        required: true
+    },
+	city:{
+		type: String
+	}
 })
 
 userSchema.methods = {
@@ -34,3 +63,4 @@ userSchema.pre('save', function (next) {
 })
 
 const User = mongoose.model('User', userSchema)
+module.exports = User;

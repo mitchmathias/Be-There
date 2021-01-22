@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const eventDb = require("../models");
 
 mongoose.connect(
     process.envMONGODB_URI ||
@@ -53,6 +53,26 @@ const eventSeed = [
     },
     
 ];
-db.Event
+const userSeed = [
+    {
+        name: "JakefromStateFarm",
+        email: "statefarm@gmail.com",
+        password:"khakis",
+        city: "Charlotte"
+    },
+    {
+        name: "Bobby",
+        email: "bobbyfarm@gmail.com",
+        password:"builds",
+        city: "Charlotte"
+    },
+    {
+        name: "BB&T",
+        email: "BB&T@gmail.com",
+        password:"owesMeMoney",
+        city: "Charlotte"
+    },
+]
+eventDb.Event
     .remove({})
     .then(() => db.Event.collection.insertMany)

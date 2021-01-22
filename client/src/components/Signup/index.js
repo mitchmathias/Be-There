@@ -11,7 +11,8 @@ class Signup extends Component {
 			confirmPassword: '',
 			email: '',
 			firstName: '',
-			lastName: ''
+			lastName: '',
+			city: ''
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -26,7 +27,7 @@ class Signup extends Component {
 		console.log(this.state.username)
 		event.preventDefault()
 
-		axios.post('/user/', {
+		axios.post('/', {
 			username: this.state.username,
 			password: this.state.password,
 			email: this.state.email,
@@ -60,7 +61,35 @@ class Signup extends Component {
 							<h4 className="col-7">Sign up</h4>
 							<form className="form-horizontal">
 								<div className="form-group">
-									<div className="col-1 col-ml-auto">
+									<div className="col-6 col-ml-auto">
+										<label className="form-label" htmlFor="firstName">First Name: </label>
+									</div>
+									<div className="col-6 col-mr-auto">
+										<input className="form-input"
+											placeholder="First Name"
+											type="firstName"
+											name="firstName"
+											value={this.state.firstName}
+											onChange={this.handleChange}
+										/>
+									</div>
+								</div>
+								<div className="form-group">
+									<div className="col-6 col-ml-auto">
+										<label className="form-label" htmlFor="lastName">Last Name: </label>
+									</div>
+									<div className="col-6 col-mr-auto">
+										<input className="form-input"
+											placeholder="Last Name"
+											type="lastName"
+											name="lastName"
+											value={this.state.lastName}
+											onChange={this.handleChange}
+										/>
+									</div>
+								</div>
+								<div className="form-group">
+									<div className="col-3 col-ml-auto">
 										<label className="form-label" htmlFor="email">Email</label>
 									</div>
 									<div className="col-3 col-mr-auto">
@@ -75,7 +104,7 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-1 col-ml-auto">
+									<div className="col-3 col-ml-auto">
 										<label className="form-label" htmlFor="username">Username</label>
 									</div>
 									<div className="col-3 col-mr-auto">
@@ -104,41 +133,28 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-1 col-ml-auto">
-										<label className="form-label" htmlFor="firstName">First Name: </label>
+									<div className="col-6 col-ml-auto">
+										<label className="form-label" htmlFor="confirmPassword">Confirm Password: </label>
 									</div>
-									<div className="col-6 col-mr-auto">
+									<div className="col-3 col-mr-auto">
 										<input className="form-input"
-											placeholder="First Name"
-											type="firstName"
-											name="firstName"
-											value={this.state.firstName}
+											placeholder="Confirm Password"
+											type="confirmPassword"
+											name="confirmPassword"
+											value={this.state.confirmPassword}
 											onChange={this.handleChange}
 										/>
 									</div>
 								</div>
-								<div className="form-group">
-									<div className="col-1 col-ml-auto">
-										<label className="form-label" htmlFor="lastName">Last Name: </label>
-									</div>
-									<div className="col-6 col-mr-auto">
-										<input className="form-input"
-											placeholder="Last Name"
-											type="lastName"
-											name="lastName"
-											value={this.state.lastName}
-											onChange={this.handleChange}
-										/>
-									</div>
-								</div>
+								
 								<div className="form-group">
 									<div className="col-7">
-									<button
-										className="btn btn-primary col-mr-auto"
-										onClick={this.handleSubmit}
-										type="submit"
-									>Sign up</button>
-								</div>
+										<button
+											className="btn btn-primary col-mr-auto"
+											onClick={this.handleSubmit}
+											type="submit"
+										>Sign up</button>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -150,4 +166,3 @@ class Signup extends Component {
 }
 
 export default Signup
-
