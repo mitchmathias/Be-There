@@ -7,8 +7,10 @@ class Signup extends Component {
 		this.state = {
 			username: '',
 			password: '',
-			confirmPassword: '',
-
+            confirmPassword: '',
+            email: '',
+            firstName: '',
+            lastName: ''
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
@@ -25,7 +27,10 @@ class Signup extends Component {
 
 		axios.post('/user/', {
 			username: this.state.username,
-			password: this.state.password
+            password: this.state.password,
+            email: this.state.email,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName
 		})
 			.then(response => {
 				console.log(response)
@@ -50,6 +55,21 @@ render() {
 		<div className="SignupForm">
 			<h4>Sign up</h4>
 			<form className="form-horizontal">
+                <div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="email">Email</label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							type="text"
+							id="email"
+							name="email"
+							placeholder="Email"
+							value={this.state.email}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="username">Username</label>
@@ -71,10 +91,38 @@ render() {
 					</div>
 					<div className="col-3 col-mr-auto">
 						<input className="form-input"
-							placeholder="password"
+							placeholder="Password"
 							type="password"
 							name="password"
 							value={this.state.password}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+                <div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="firstName">First Name: </label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="First Name"
+							type="firstName"
+							name="firstName"
+							value={this.state.firstName}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+                <div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="lastName">Last Name: </label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							placeholder="Last Name"
+							type="lastName"
+							name="lastName"
+							value={this.state.lastName}
 							onChange={this.handleChange}
 						/>
 					</div>
