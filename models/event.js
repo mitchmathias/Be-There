@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
-require('mongoose-uuid2')(mongoose);
+
 
 
 
@@ -15,9 +15,16 @@ const EventSchema = new Schema({
         default: 0
     },
     location: {
-        type: { type: String }, coordinates: [number],
-        id: false
-    }
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        } 
+    }        
 });
 
 EventSchema.set('toObject', { getters: true });
