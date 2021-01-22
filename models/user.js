@@ -22,7 +22,12 @@ const userSchema = new Schema({
 		required: [true, "can't be blank"],
 		match: [/\S+@\S+\.\S+/, 'is invalid'],
         index: true},
-    name:{
+    firstName:{
+        type: String,
+        lowercase: true,
+        required: true
+	},
+	lastName:{
         type: String,
         lowercase: true,
         required: true
