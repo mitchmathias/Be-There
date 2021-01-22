@@ -18,7 +18,7 @@ module.exports = {
         console.log("new user:", newUser)
         User
             .create(req.body)
-            .then(dbModel => {console.log(dbModel); res.json(dbModel)})
+            .then(dbModel => {res.json(dbModel)})
             .catch(err => {console.log(err); res.status(422).json(err)});
     },
     update: function(req,res) {
