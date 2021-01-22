@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const eventDb = require("../models");
+const db = require("../models");
 
 mongoose.connect(
     process.envMONGODB_URI ||
@@ -55,24 +55,98 @@ const eventSeed = [
 ];
 const userSeed = [
     {
-        name: "JakefromStateFarm",
-        email: "statefarm@gmail.com",
-        password:"khakis",
-        city: "Charlotte"
+        name: {
+            first: "Luis",
+            last: "Clark"
+        },
+        username: "freelandlol",
+        email: "luis.clark@example.com",
+        password: "pass",
+        location: {
+            street: {
+                number: 490,
+                name: "Country Club Rd"
+            },
+            city: "Lubbock",
+            state: "South Carolina",
+            country: "United States",
+            postcode: 55930,
+            coordinates: {
+                latitude: "36.2902",
+                longitude: "-69.8250"
+            }
+        }
     },
     {
-        name: "Bobby",
-        email: "bobbyfarm@gmail.com",
-        password:"builds",
-        city: "Charlotte"
+        name: {
+            "first": "Judith",
+            "last": "Gordon"
+        },
+        username: "BloodDrainer4Good",
+        email: "judith.gordon@example.com",
+        password: "pass",
+        location: {
+            street: {
+                number: 506,
+                name: "Camden Ave"
+            },
+            city: "Reno",
+            state: "Pennsylvania",
+            country: "United States",
+            postcode: 80058,
+            coordinates: {
+                latitude: "-72.2106",
+                longitude: "-16.8913"
+            }
+        }
     },
     {
-        name: "BB&T",
-        email: "BB&T@gmail.com",
-        password:"owesMeMoney",
-        city: "Charlotte"
+        name: {
+            first: "Freddie",
+            last: "lawson"
+        },
+        username: "queen",
+        email: "freddie.lawson@example.com",
+        password: "pass",
+        location: {
+            street: {
+                number: 410,
+                name: "E Little York Rd"
+            },
+            city: "Oakland",
+            state: "California",
+            country: "United States",
+            postcode: 39667,
+            coordinates: {
+                latitude: "-44.8614",
+                longitude: "7.0719"
+            }
+        }
+    },
+{
+        name: {
+            "first": "Ben",
+            "last": "Money"
+        },
+        username: "allergic2money",
+        email: "ben.takemymoney@example.com",
+        password: "pass",
+        location: {
+            "street": {
+                "number": 410,
+                "name": "E Little York Rd"
+            },
+            "city": "Oakland",
+            "state": "California",
+            "country": "United States",
+            "postcode": 39667,
+            "coordinates": {
+                "latitude": "-44.8614",
+                "longitude": "7.0719"
+            }
+        }
     },
 ]
-eventDb.Event
+db.Event
     .remove({})
     .then(() => db.Event.collection.insertMany)
