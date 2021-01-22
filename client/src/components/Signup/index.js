@@ -26,7 +26,7 @@ class Signup extends Component {
 		console.log(this.state.username)
 		event.preventDefault()
 
-		axios.post('/user/', {
+		axios.post('/', {
 			username: this.state.username,
             password: this.state.password,
             email: this.state.email,
