@@ -50,9 +50,6 @@ class Feed extends Component {
             <Container fluid>
                 <Row>
                     <Col size="md-6">
-                        <Jumbotron>
-                            <h1>events</h1>
-                        </Jumbotron>
 
                     </Col>
                     <Col size="md-6 sm-12">
