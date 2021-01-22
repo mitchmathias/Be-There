@@ -35,14 +35,30 @@ Beginning with login/signup users provide protected information which is solely 
 
 ### Contact:
 
-[Github](https://github.com/boylepeter)
 
-[LinkedIn](https://www.linkedin.com/in/peter-boyle-22b5071b7/)
-
-Email: [Boyle.Peter614@gmail.com](Boyle.Peter614@gmail.com)
 
 ### Contributors: 
-Matthew Caspento, Omar Cossio, Chris Lyko and Peter Boyle
+Mitch Mathias
+[Github](https://mitchmathias.github.io/Aboutme/)
+Email:[mitch.mathias96@gmail.com](mitch.mathias96@gmail.com) 
+
+Matthew Caspento
+[Github](https://mrcaspento.github.io/MRC_Development/Html/index.html#) 
+[LinkedIn](https://www.linkedin.com/in/matthew-caspento-6358671b6/)
+Email: [Mrcaspento@gmail.com](Mrcaspento@gmail.com)
+
+Omar Cossio 
+[Github](https://github.com/omarcossio)
+[LinkedIn](https://www.linkedin.com/in/omar-cossio-7b332a12b/)
+
+Chris Lyko
+[Github](https://github.com/KrixLeekz)
+[LinkedIn](https://www.linkedin.com/in/christopher-lyko-0194b714b/)
+
+Peter Boyle
+[Github](https://github.com/boylepeter)
+[LinkedIn](https://www.linkedin.com/in/peter-boyle-22b5071b7/)
+Email: [Boyle.Peter614@gmail.com](Boyle.Peter614@gmail.com)
 
 ### Tests: 
 Please try the application and feel free to contact us with any feedback or questions. We utilized local testing as well as deployed testing on Heroku.
