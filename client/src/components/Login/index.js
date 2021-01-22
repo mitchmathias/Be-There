@@ -1,4 +1,3 @@
-  
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
@@ -13,7 +12,7 @@ class Login extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -46,7 +45,7 @@ class Login extends Component {
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
-                
+
             })
     }
 
@@ -55,47 +54,55 @@ class Login extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
-                    <h4>Login</h4>
-                    <form className="form-horizontal">
-                        <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
+                <div className="row signup d-flex justify-content-center">
+                    <div className="col-4">
+                        <div className="signupForm card">
+                            <div className="card-body">
+                                <h1 className="col-6 card-title">Login</h1>
+                                <form className="form-horizontal">
+                                    <div className="form-group">
+                                        <div className="col-6 col-mr-auto">
+                                            <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
+                                        </div>
+                                        <div className="col-6 col-mr-auto">
+                                            <input className="form-input"
+                                                type="text"
+                                                id="username"
+                                                name="username"
+                                                placeholder="Username"
+                                                value={this.state.username}
+                                                onChange={this.handleChange}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <div className="col-6 col-mr-auto">
+                                            <label className="form-label" htmlFor="password"><h4>Password:</h4></label>
+                                        </div>
+                                        <div className="col-6 col-mr-auto">
+                                            <input className="form-input"
+                                                placeholder="password"
+                                                type="password"
+                                                name="password"
+                                                value={this.state.password}
+                                                onChange={this.handleChange}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="form-group ">
+                                        <div className="col-6">
+                                        <button
+                                            className="btn btn-primary col-6 col-mr-auto"
+
+                                            onClick={this.handleSubmit}
+                                            type="submit"><h5>Login</h5>
+                                        </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="password">Password: </label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    placeholder="password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group ">
-                            <div className="col-7"></div>
-                            <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             )
         }
