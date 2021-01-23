@@ -1,14 +1,14 @@
 import React from 'react';
-
+import Container from '@material-ui/core/Container'
+import Box from '@material-ui/core/Box'
 import '../../style.css'
 
 function EventCard() {
     return (
-        <div className="card mb-3" style={{ "max-width": "540px"}}>
+        <Container >
+            <Box>
             <div className="row g-0">
-                <div className="col-md-4">
-                    <img src="..." alt="..." />
-                </div>
+                
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">Example Event</h5>
@@ -22,7 +22,8 @@ function EventCard() {
                     </div>
                 </div>
             </div>
-        </div>
+            </Box>
+        </Container>
     )
 }
 
