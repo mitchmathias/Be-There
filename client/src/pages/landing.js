@@ -35,8 +35,7 @@ function Landing () {
 
     return (
         <BrowserRouter>
-            <Wrapper>
-                <Welcome />
+                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfileTab={clickProfile} /><Welcome />
                 <LandingNav SetLoginTab={clickLogin} SetSignupTab={clickSignup}  />
                 {tab === 'login' && 
                     <Login />}
@@ -45,18 +44,17 @@ function Landing () {
 
                 {/* Remove Below Later */}
 
-                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfileTab={clickProfile} />
+                
                 {tab === 'opps' && 
                     <EventCard />}
                 {tab === 'events' &&
                     <CreateEvent />}
                 {tab === 'profile' &&
                     <MyProfile />}
-
+                    
                 {/* Remove Above Later  */}
 
                 <Footer />
-            </Wrapper>
         </BrowserRouter>
     )
 }

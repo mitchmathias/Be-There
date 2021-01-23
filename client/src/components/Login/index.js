@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import './style.css'
 
 class Login extends Component {
     constructor() {
@@ -55,16 +56,15 @@ class Login extends Component {
         } else {
             return (
                 <div className="row signup d-flex justify-content-center">
-                    <div className="col-4">
-                        <div className="signupForm card">
+                        <div className="card">
                             <div className="card-body">
-                                <h1 className="col-6 card-title">Login</h1>
+                                <h1 className="card-title">Login</h1>
                                 <form className="form-horizontal">
                                     <div className="form-group">
-                                        <div className="col-6 col-mr-auto">
+                                        <div className=" col-mr-auto">
                                             <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
                                         </div>
-                                        <div className="col-6 col-mr-auto">
+                                        <div className=" col-mr-auto">
                                             <input className="form-input"
                                                 type="text"
                                                 id="username"
@@ -76,10 +76,10 @@ class Login extends Component {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <div className="col-6 col-mr-auto">
+                                        <div className=" col-mr-auto">
                                             <label className="form-label" htmlFor="password"><h4>Password:</h4></label>
                                         </div>
-                                        <div className="col-6 col-mr-auto">
+                                        <div className=" col-mr-auto">
                                             <input className="form-input"
                                                 placeholder="password"
                                                 type="password"
@@ -89,11 +89,10 @@ class Login extends Component {
                                             />
                                         </div>
                                     </div>
-                                    <div className="form-group ">
-                                        <div className="col-6">
+                                    <div className="form-group">
+                                        <div className="">
                                         <button
-                                            className="btn btn-primary col-6 col-mr-auto"
-
+                                            className="btn btn-primary  col-mr-auto col-mb-auto"
                                             onClick={this.handleSubmit}
                                             type="submit"><h5>Login</h5>
                                         </button>
@@ -103,7 +102,6 @@ class Login extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
             )
         }
     }

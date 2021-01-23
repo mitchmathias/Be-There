@@ -5,7 +5,6 @@ import './style.css'
 function LandingNav(props) {
     return (
         <div className="row signup d-flex justify-content-center">
-            <div className="col-4">
                 <div className="card">
                     <div className="card-body">
                         <div className="navbar-nav mr-auto">
@@ -18,7 +17,6 @@ function LandingNav(props) {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     )
 };

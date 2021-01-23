@@ -55,17 +55,16 @@ class Signup extends Component {
 
 	render() {
 		return (
-			<div className="row signup d-flex justify-content-center">
-				<div className="col-4">
+			<div className="row signup d-flex justify-content-center">		
 					<div className="signupForm card">
 						<div className="card-body">
-							<h1 className="col-6 card-title">Sign up</h1>
+							<h1 className="card-title">Sign up</h1>
 							<form className="form-horizontal">
 								<div className="form-group">
-									<div className="col-6 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="firstName"><h4>First Name:</h4> </label>
 									</div>
-									<div className="col-6 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											placeholder="First Name"
 											type="firstName"
@@ -76,10 +75,10 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-6 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="lastName"><h4>Last Name:</h4> </label>
 									</div>
-									<div className="col-6 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											placeholder="Last Name"
 											type="lastName"
@@ -90,10 +89,10 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-3 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="email"><h4>Email:</h4></label>
 									</div>
-									<div className="col-3 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											type="text"
 											id="email"
@@ -105,10 +104,10 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-3 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
 									</div>
-									<div className="col-3 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											type="text"
 											id="username"
@@ -120,10 +119,10 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-1 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
 									</div>
-									<div className="col-6 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											placeholder="Password"
 											type="password"
@@ -134,10 +133,10 @@ class Signup extends Component {
 									</div>
 								</div>
 								<div className="form-group">
-									<div className="col-6 col-ml-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
 									</div>
-									<div className="col-3 col-mr-auto">
+									<div className="col-mr-auto col-mb-auto">
 										<input className="form-input"
 											placeholder="Confirm Password"
 											type="confirmPassword"
@@ -147,11 +146,11 @@ class Signup extends Component {
 										/>
 									</div>
 								</div>
-								
+
 								<div className="form-group">
-									<div className="col-7">
+									<div className="">
 										<button
-											className="btn btn-primary col-mr-auto"
+											className="btn btn-primary col-mr-auto col-mb-auto"
 											onClick={this.handleSubmit}
 											type="submit"
 										><h5>Sign up</h5></button>
@@ -160,7 +159,6 @@ class Signup extends Component {
 							</form>
 						</div>
 					</div>
-				</div>
 			</div>
 		)
 	}
