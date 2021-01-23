@@ -4,6 +4,7 @@ import './style.css'
 import LandingNav from '../Navs/LandingNav';
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
+import Card from '@material-ui/core/Card'
 
 class Signup extends Component {
 	constructor() {
@@ -55,14 +56,13 @@ class Signup extends Component {
 			})
 	}
 
-
 	render() {
 		return (
 			<Container>
 				<Box>
 					<div className="row d-flex justify-content-center">
-						<div className="card" style={{alignItems: 'center' }}>
-							<div className="card-body" >
+						<Card style={{alignItems: 'center'}}>
+							<div className="card-body">
 								<h1 className="card-title">Sign up</h1>
 								<form className="form-horizontal">
 									<div className="form-group">
@@ -163,7 +163,7 @@ class Signup extends Component {
 									</div>
 								</form>
 							</div>
-						</div>
+						</Card>
 					</div>
 				</Box>
 			</Container>

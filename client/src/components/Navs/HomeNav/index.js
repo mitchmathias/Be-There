@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './style.css'
+import Typography from '@material-ui/core/Typography'
 
 function HomeNav(props) {
     return (
-        <nav className="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <Typography className="navbar sticky-top navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav mr-auto">
                     <div className="nav-item">
                         <Link onClick={props.SetOppsTab} className={"nav-link active nav-link"}><h5>Opportunities Near You</h5> </Link>
@@ -19,7 +20,7 @@ function HomeNav(props) {
                         <Link onClick={props.SetProfileTab} className={"nav-link active nav-link"}><h5>My Profile</h5> </Link>
                     </div>
                 </div>
-        </nav>
+        </Typography>
         
     )
 };

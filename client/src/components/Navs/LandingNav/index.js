@@ -11,9 +11,10 @@ function LandingNav(props) {
         <Container>
             <Box component="span" m={1}>
                 <div className="row d-flex justify-content-center">
-                    <div className="card">
-                        <nav className="navbar navbar-expand-lg">
+                    <Card>
+                        <div className="card-body">
                             <div className="card-body ">
+                        <nav className="navbar navbar-expand">
                             <div className="navbar-nav mr-auto">
                                 <div className="navbar-nav col-mr-auto">
                                     <div className="nav-item">
@@ -26,9 +27,10 @@ function LandingNav(props) {
                                     </div>
                                     </div>
                                 </div>
-                            </div>
                         </nav>
-                    </div>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
             </Box>
         </Container>

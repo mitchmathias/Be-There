@@ -4,6 +4,7 @@ import axios from 'axios'
 import './style.css'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
+import Card from '@material-ui/core/Card'
 
 class Login extends Component {
     constructor() {
@@ -60,7 +61,7 @@ class Login extends Component {
                 <Container>
                     <Box>
                         <div className="row d-flex justify-content-center">
-                            <div className="card" style={{alignItems: 'center' }}>
+                            <Card>
                                 <div className="card-body">
                                     <h1 className="card-title">Login</h1>
                                     <form className="form-horizontal">
@@ -104,7 +105,7 @@ class Login extends Component {
                                         </div>
                                     </form>
                                 </div>
-                            </div>
+                            </Card>
                         </div>
                     </Box>
                 </Container>
