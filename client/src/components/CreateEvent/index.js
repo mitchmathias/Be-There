@@ -1,9 +1,11 @@
 import React from "react";
+import Container from '@material-ui/core/Container'
+import Box from '@material-ui/core/Box'
 
 function CreateEvent() {
   return (
-    <div className="container mt-5">
-      <div className="Card">
+    <Container>
+      <Box  component="span" m={1} >
         <h1>Create Your Event</h1>
         <div className="input-group mb-3">
           <span className="input-group-text" id="basic-addon1">
@@ -78,8 +80,8 @@ function CreateEvent() {
         <button type="button" class="btn btn-secondary">
           Create
         </button>
-      </div>
-    </div>
+      </Box>
+    </Container>
   );
 }
 
