@@ -14,8 +14,13 @@ function HomeNav(props) {
                     </div>
 
                 </div>
-                
+                <div className="navbar-nav ml-auto">
+                    <div className="nav-item">
+                        <Link onClick={props.SetProfileTab} className={"nav-link active nav-link"}><h5>My Profile</h5> </Link>
+                    </div>
+                </div>
         </nav>
+        
     )
 };
 

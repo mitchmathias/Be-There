@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Wrapper from './components/Wrapper';
 import Landing from './pages/landing'
@@ -13,9 +13,7 @@ function App() {
         <Landing />
       </Wrapper>
     </BrowserRouter>
-    
   );
-  }
-
+}
 
 export default App;
