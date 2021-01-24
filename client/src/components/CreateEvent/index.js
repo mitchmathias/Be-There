@@ -77,7 +77,7 @@ const CreateEvent = () => {
             aria-describedby="addon-wrapping"
           />
         </div>
-        <button type="button" class="btn btn-secondary">
+        <button type="button" className="btn btn-secondary">
           Create
         </button>
       </Box>

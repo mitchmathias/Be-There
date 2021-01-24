@@ -46,7 +46,7 @@ class Login extends Component {
                     this.setState({
                         redirectTo: 'home'
                     })
-                   
+
                 }
             }).catch(error => {
                 console.log('login error: ')
