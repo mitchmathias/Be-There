@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './style.css'
 import Typography from '@material-ui/core/Typography'
 
-function HomeNav(props) {
+const HomeNav = () => {
     return (
         <Router>
         <Typography className="navbar sticky-top navbar-expand navbar-dark bg-dark">

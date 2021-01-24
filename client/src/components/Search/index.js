@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style.css'
 
-function Search (props) {
+const Search = props => {
     return (
         <form>
         <div className="form-group">
