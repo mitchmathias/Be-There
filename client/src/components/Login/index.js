@@ -42,9 +42,11 @@ class Login extends Component {
                         loggedIn: true,
                         username: response.data.username
                     })
+                    console.log("weMadeIT")
                     this.setState({
-                        redirectTo: '/'
+                        redirectTo: 'home'
                     })
+                   
                 }
             }).catch(error => {
                 console.log('login error: ')
