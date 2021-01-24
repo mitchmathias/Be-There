@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import CreateEvent from '../components/CreateEvent'
 import Feed from '../components/Feed';
 import Footer from '../components/Footer';
@@ -11,7 +11,7 @@ import MyProfile from '../components/MyProfile';
 
 
 function Home () {
-    const [tab, setTab] = useState("Home");
+    const [tab, setTab] = useState("opps");
 
     const clickOpps = () => {
         setTab("opps")
@@ -24,20 +24,16 @@ function Home () {
     }
 
     return (
-        <BrowserRouter>
+        <Router>
             <Wrapper>
                 <Jumbotron />
-                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfiletab={clickProfile} />
-                {tab === 'opps' &&
-                    <Feed>
-                        <EventCard />
-                    </Feed>}
-                {tab === 'events' &&
-                    <CreateEvent />}
-                {tab === 'profile' && <MyProfile />}
+                <HomeNav />
+                <Route exact path='/events' component={EventCard} />
+                <Route exact path='/planEvents' component={CreateEvent} />
+                <Route exact path='/myProfile' component={MyProfile} />
                 <Footer />
             </Wrapper>
-        </BrowserRouter>
+        </Router>
     )
 }
 

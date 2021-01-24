@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Welcome from '../components/Welcome';
 import Wrapper from '../components/Wrapper';
@@ -15,47 +15,25 @@ import EventCard from '../components/EventCard';
 import MyProfile from '../components/MyProfile'
 
 function Landing () {
-    const [tab, setTab] = useState("landing");
-
-    const clickLogin = () => {
-        setTab("login")
-    }
-    const clickSignup = () => {
-        setTab("signup")
-    }
-    const clickOpps = () => {
-        setTab("opps")
-    }
-    const clickEvents = () => {
-        setTab("events")
-    }
-    const clickProfile = () => {
-        setTab("profile")
-    }
 
     return (
-        <BrowserRouter>
-                <HomeNav SetOppsTab={clickOpps} SetEventsTab={clickEvents} SetProfileTab={clickProfile} /><Welcome />
-                <LandingNav SetLoginTab={clickLogin} SetSignupTab={clickSignup}  />
-                {tab === 'login' && 
-                    <Login />}
-                {tab === 'signup' && 
-                    < Signup />}
+        <Router>      
+                <Welcome />
+                <LandingNav />
+                <Route exact path='/signup' component={Signup} />
+                <Route exact path='/login' component={Login} />
                 
                 {/* Remove Below Later */}
 
+                <HomeNav />
+                <Route exact path='/events' component={EventCard} />
+                <Route exact path='/planEvents' component={CreateEvent} />
+                <Route exact path='/myProfile' component={MyProfile} />
                 
-                {tab === 'opps' && 
-                    <EventCard />}
-                {tab === 'events' &&
-                    <CreateEvent />}
-                {tab === 'profile' &&
-                    <MyProfile />}
-                    
                 {/* Remove Above Later  */}
 
                 <Footer />
-        </BrowserRouter>
+        </Router>
     )
 }
 
