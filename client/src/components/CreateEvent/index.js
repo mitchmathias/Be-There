@@ -1,8 +1,25 @@
 import React from "react";
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
 function CreateEvent() {
+  const classes = useStyles();
+
   return (
     <Container>
       <Box  component="span" m={1} >
@@ -45,18 +62,19 @@ function CreateEvent() {
             aria-describedby="basic-addon1"
           />
         </div>
-
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">
-            Event Date
-          </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Date"
-            aria-label="Date"
-            aria-describedby="basic-addon1"
-          />
+          <div>
+         <form className={classes.container} noValidate>
+      <TextField
+        id="date"
+        label="Birthday"
+        type="date"
+        defaultValue="2017-05-24"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      </form>
         </div>
         <div className="input-group mb-3">
           <span className="input-group-text">Description</span>
