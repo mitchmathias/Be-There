@@ -14,7 +14,7 @@ import Feed from '../components/Feed';
 import EventCard from '../components/EventCard';
 import MyProfile from '../components/MyProfile'
 
-function Landing () {
+const Landing = () => {
 
     return (
         <Router>      

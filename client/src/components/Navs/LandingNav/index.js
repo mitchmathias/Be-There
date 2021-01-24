@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card'
 import Signup from '../../Signup'
 import './style.css'
 
-function LandingNav() {
+const LandingNav = () => {
     return (
         <Container>
             <Box component="span" m={1}>
