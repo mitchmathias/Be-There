@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MyProfile () {
+const MyProfile = () => {
     return (
         <h1>Test Object</h1>
     )

@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function CreateEvent() {
-  const classes = useStyles();
+
+const CreateEvent = () => {
 
   return (
     <Container>

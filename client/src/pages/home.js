@@ -10,18 +10,18 @@ import HomeNav from '../components/Navs/HomeNav';
 import MyProfile from '../components/MyProfile';
 
 
-function Home () {
-    const [tab, setTab] = useState("opps");
+const  Home = () => {
+    // const [tab, setTab] = useState("opps");
 
-    const clickOpps = () => {
-        setTab("opps")
-    }
-    const clickEvents = () => {
-        setTab("events")
-    }
-    const clickProfile = () => {
-        setTab("profile")
-    }
+    // const clickOpps = () => {
+    //     setTab("opps")
+    // }
+    // const clickEvents = () => {
+    //     setTab("events")
+    // }
+    // const clickProfile = () => {
+    //     setTab("profile")
+    // }
 
     return (
         <Router>

@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
+
 import '../../style.css'
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
       maxHeight: '100%',
     },
   }));
-function EventCard() {
-    const classes = useStyles();
+   
+
+const EventCard = () => {
+   const classes = useStyles();
     return (
 
         <div className={classes.root}>
