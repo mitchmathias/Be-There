@@ -12,22 +12,20 @@ const LandingNav = () => {
                 <div className="row d-flex justify-content-center">
                     <Card>
                         <div className="card-body">
-                            <div className="card-body ">
-                                <nav className="navbar navbar-expand">
-                                    <div className="navbar-nav mr-auto">
-                                        <div className="navbar-nav col-mr-auto">
-                                            <div className="nav-item">
-                                                <NavLink className="nav-link active nav-link" to='/login' exact><h4>Login</h4></NavLink>
-                                            </div>
-                                        </div>
-                                        <div className="navbar-nav ml-auto">
-                                            <div className="nav-item">
-                                                <NavLink className="nav-link active nav-link" to='/signup' exact ><h4>Signup</h4></NavLink>
-                                            </div>
+                            <nav className="navbar navbar-expand">
+                                <div className="navbar-nav mr-auto">
+                                    <div className="navbar-nav col-mr-auto">
+                                        <div className="nav-item">
+                                            <NavLink className="nav-link active nav-link" to='/login' exact><h4>Login</h4></NavLink>
                                         </div>
                                     </div>
-                                </nav>
-                            </div>
+                                    <div className="navbar-nav ml-auto">
+                                        <div className="nav-item">
+                                            <NavLink className="nav-link active nav-link" to='/signup' exact ><h4>Signup</h4></NavLink>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
                         </div>
                     </Card>
                 </div>
