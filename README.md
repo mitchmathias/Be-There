@@ -54,6 +54,7 @@ Omar Cossio
 Chris Lyko
 [Github](https://github.com/KrixLeekz)
 [LinkedIn](https://www.linkedin.com/in/christopher-lyko-0194b714b/)
+Email: [chrislyko@gmail.com](chrislyko@gmail.com)
 
 Peter Boyle
 [Github](https://github.com/boylepeter)
