@@ -144,7 +144,7 @@ class Signup extends Component {
 										<div className="col-mb-auto">
 											<input className="form-input"
 												placeholder="Confirm Password"
-												type="confirmPassword"
+												type="password"
 												name="confirmPassword"
 												value={this.state.confirmPassword}
 												onChange={this.handleChange}
