@@ -17,22 +17,29 @@ import MyProfile from '../components/MyProfile'
 const Landing = () => {
 
     return (
-        <Router>      
-                <Welcome />
-                <LandingNav />
-                <Route exact path='/signup' component={Signup} />
-                <Route exact path='/login' component={Login} />
-                
-                {/* Remove Below Later */}
+        <Router>
+            <Welcome />
+            <LandingNav />
+            <Route path='/signup' render={(props) =>
+                <Signup {...props} updateUser={this.updateUser} />
+            } />
+            <Route path='/login' render={(props) =>
+                <Login {...props} updateUser={this.updateUser} />
+            } />
 
-                <HomeNav />
-                <Route exact path='/events' component={EventCard} />
-                <Route exact path='/planEvents' component={CreateEvent} />
-                <Route exact path='/myProfile' component={MyProfile} />
-                
-                {/* Remove Above Later  */}
+            {/* <Route path='/signup' exact component={Signup} />
+            <Route path='/login' exact component={Login} /> */}
 
-                <Footer />
+            {/* Remove Below Later */}
+
+            <HomeNav />
+            <Route exact path='/events' component={EventCard} />
+            <Route exact path='/planEvents' component={CreateEvent} />
+            <Route exact path='/myProfile' component={MyProfile} />
+
+            {/* Remove Above Later  */}
+
+            <Footer />
         </Router>
     )
 }

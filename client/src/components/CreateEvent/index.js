@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 
+  
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
@@ -17,9 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const CreateEvent = () => {
 
+  const classes = useStyles();
+  
   return (
     <Container>
       <Box  component="span" m={1} >
@@ -95,7 +97,7 @@ const CreateEvent = () => {
             aria-describedby="addon-wrapping"
           />
         </div>
-        <button type="button" class="btn btn-secondary">
+        <button type="button" className="btn btn-secondary">
           Create
         </button>
       </Box>

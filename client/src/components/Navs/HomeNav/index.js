@@ -7,22 +7,22 @@ import Typography from '@material-ui/core/Typography'
 const HomeNav = () => {
     return (
         <Router>
-        <Typography className="navbar sticky-top navbar-expand navbar-dark bg-dark">
+            <Typography className="navbar sticky-top navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav mr-auto">
                     <div className="nav-item">
-                        <NavLink  to='/events' exact className="nav-link active nav-link"><h5>Opportunities Near You</h5> </NavLink>
+                        <NavLink to='/events' exact className="nav-link active nav-link"><h5>Opportunities Near You</h5> </NavLink>
                     </div>
                     <div className="nav-item">
-                        <NavLink  to='/planEvents' exact className="nav-link active nav-link"><h5>Plan an Event</h5></NavLink>
+                        <NavLink to='/planEvents' exact className="nav-link active nav-link"><h5>Plan an Event</h5></NavLink>
                     </div>
 
                 </div>
                 <div className="navbar-nav ml-auto">
                     <div className="nav-item">
-                        <NavLink  to='/myProfile' exact className="nav-link active nav-link"><h5>My Profile</h5> </NavLink>
+                        <NavLink to='/myProfile' exact className="nav-link active nav-link"><h5>My Profile</h5> </NavLink>
                     </div>
                 </div>
-        </Typography>
+            </Typography>
         </Router>
     )
 };

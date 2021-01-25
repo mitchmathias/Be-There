@@ -7,30 +7,39 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 
 class Login extends Component {
-    constructor() {
-        super()
+
+    constructor(props) {
+        super(props);
+
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            // redirectTo: null
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+        this.onChangeUsername = this.onChangeUsername.bind(this);
+        this.onchangePassword = this.onchangePassword.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
     }
 
-    handleChange(event) {
+    onChangeUsername(e) {
         this.setState({
-            [event.target.name]: event.target.value
-        })
+            username: e.target.value
+        });
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
+    onchangePassword(e) {
+        this.setState({
+            password: e.target.value
+        });
+    }
+
+    onSubmit(e) {
+        e.preventDefault()
         console.log('handleSubmit')
 
         axios
-            .post('/api/users/login', {
+            .post('users/login', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -43,16 +52,21 @@ class Login extends Component {
                         username: response.data.username
                     })
                     console.log("weMadeIT")
-                    this.setState({
-                        redirectTo: 'home'
-                    })
-                   
+                    // this.setState({
+                    //     redirectTo: '/home'
+                    // })
+
                 }
             }).catch(error => {
                 console.log('login error: ')
                 console.log(error);
 
             })
+            this.setState({
+                username: "",
+                password: ""
+            })
+            this.props.history.push("/myProfile");
     }
 
     render() {
@@ -66,7 +80,7 @@ class Login extends Component {
                             <Card>
                                 <div className="card-body">
                                     <h1 className="card-title">Login</h1>
-                                    <form className="form-horizontal">
+                                    <form onSubmit={this.onSubmit} className="form-horizontal">
                                         <div className="form-group">
                                             <div className=" col-mr-auto">
                                                 <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
@@ -78,7 +92,7 @@ class Login extends Component {
                                                     name="username"
                                                     placeholder="Username"
                                                     value={this.state.username}
-                                                    onChange={this.handleChange}
+                                                    onChange={this.onChangeUsername}
                                                 />
                                             </div>
                                         </div>
@@ -89,10 +103,11 @@ class Login extends Component {
                                             <div className=" col-mr-auto">
                                                 <input className="form-input"
                                                     placeholder="password"
+                                                    id="password"
                                                     type="password"
                                                     name="password"
                                                     value={this.state.password}
-                                                    onChange={this.handleChange}
+                                                    onChange={this.onchangePassword}
                                                 />
                                             </div>
                                         </div>
@@ -100,7 +115,8 @@ class Login extends Component {
                                             <div className="">
                                                 <button
                                                     className="btn btn-primary  col-mr-auto col-mb-auto"
-                                                    onClick={this.handleSubmit}
+                                                    onClick={this.onSubmit}
+                                                    variant='success'
                                                     type="submit"><h5>Login</h5>
                                                 </button>
                                             </div>
