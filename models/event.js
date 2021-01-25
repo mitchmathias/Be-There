@@ -10,7 +10,13 @@ const EventSchema = new Schema({
     meta: {
         favs: Number,
         default: 0
-    },     
+    },
+    location: {
+        type: {
+            type: String
+            
+        } 
+    }        
 });
 
 EventSchema.set('toObject', { getters: true });
