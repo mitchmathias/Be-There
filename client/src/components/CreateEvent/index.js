@@ -4,6 +4,9 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Jumbotron from '../Jumbotron'
+import HomeNav from '../Navs/HomeNav'
+import Footer from '../Footer'
 
 
 
@@ -13,7 +16,7 @@ const CreateEvent = () => {
   const [organization, setOrganization] = useState("")
   const [eventName, setEventName] = useState("")
   const [location, setLocation] = useState("")
-  const [date, setDate] = useState("")
+  const [date, setDate] = useState("2017-05-24")
   const [description, setDescription] = useState("")
   const [imgUrl, setImgUrl] = useState("")
 
@@ -33,22 +36,18 @@ const CreateEvent = () => {
 
 
 
-  function handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
+
   function handleSubmit(event) {
     console.log(this.state.username);
     event.preventDefault();
 
     axios
-      .post("/api/users", {
-        organization: this.state.organization,
-        eventName: this.state.eventName,
-        email: this.state.email,
-        location: this.state.location,
-        description: this.state.description
+      .post("/api/events", {
+        organization: organization,
+        title: eventName,
+        photoUrl: imgUrl,
+        location: location,
+        body: description
       })
       .then((response) => {
         console.log(response);
@@ -70,7 +69,7 @@ const CreateEvent = () => {
     <Container>
 
       <Box component="span" m={1} >
-        <form className={useStyles.container} noValidate>
+        <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
           <h1>Create Your Event</h1>
           <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">
@@ -121,7 +120,7 @@ const CreateEvent = () => {
                 id="date"
                 label="Birthday"
                 type="date"
-                defaultValue="2017-05-24"
+                
                 value={date}
                 onChange={e => setDate(e.target.value)}
                 className={useStyles.textField}

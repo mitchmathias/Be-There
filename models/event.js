@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-
-
-
 const EventSchema = new Schema({
     title: { type: String, required: true },
     photoUrl: {type: String},
@@ -16,21 +13,14 @@ const EventSchema = new Schema({
     },
     location: {
         type: {
-            type: String,
-            enum: ['Point'],
-            required: true
-        },
-        coordinates: {
-            type: [Number],
-            required: true
+            type: String
+            
         } 
     }        
 });
 
 EventSchema.set('toObject', { getters: true });
 EventSchema.set('toJSON', { getters: true });
-
-
 
 const Event = mongoose.model("Event", EventSchema);
 

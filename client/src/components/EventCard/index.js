@@ -4,6 +4,10 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import Jumbotron from '../Jumbotron'
+import HomeNav from '../Navs/HomeNav'
+import Footer from '../Footer'
+
 
 
 import '../../style.css'
@@ -32,7 +36,9 @@ const useStyles = makeStyles((theme) => ({
 const EventCard = () => {
    const classes = useStyles();
     return (
-
+        <div>
+            <Jumbotron />
+            <HomeNav />
         <div className={classes.root}>
             <Paper className={classes.paper}>
                 <Grid container spacing={2}>
@@ -66,6 +72,8 @@ const EventCard = () => {
                     </Grid>
                 </Grid>
             </Paper>
+        </div>
+        <Footer />
         </div>
     )
 }

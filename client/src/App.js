@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Wrapper from './components/Wrapper';
-import LandingNav from './components/Navs/LandingNav'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EventCard from './components/EventCard';
+import CreateEvent from './components/CreateEvent';
+import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
 import Home from './pages/home'
 import './App.css';
 import Signup from './components/Signup'
 import Login from './components/Login'
 import axios from 'axios'
-import HomeNav from './components/Navs/HomeNav'
-import Welcome from './components/Welcome'
-import Footer from './components/Footer'
+
 
 class App extends Component {
 
@@ -54,38 +53,26 @@ class App extends Component {
     this.setState(user)
   }
 
+
   render() {
 
     return (
-      // <Router>
-      //   <Wrapper>
-      //     <Landing />
-      //   </Wrapper>
-      // </Router>
-
       <Router>
-        <Welcome />
-        <LandingNav />
-        <Route path='/signup' render={(props) =>
-          <Signup {...props} updateUser={this.updateUser} />
-        } />
-        <Route path='/login' render={(props) =>
-          <Login {...props} updateUser={this.updateUser} />
-        } />
-
-        {/* <Route path='/signup' exact component={Signup} />
-            <Route path='/login' exact component={Login} /> */}
-
-        {/* Remove Below Later */}
-
-        {/* <HomeNav /> */}
-        {/* <Route exact path='/events' component={EventCard} />
-        <Route exact path='/planEvents' component={CreateEvent} />
-        <Route exact path='/myProfile' component={MyProfile} /> */}
-
-        {/* Remove Above Later  */}
-
-        <Footer />
+        <Switch>
+          <Route exact path='/'>
+            <Landing />
+          </Route>
+          <Route path='/login' render={(props) =>
+            <Login {...props} updateUser={this.updateUser} />
+          } />
+          <Route path='/signup' render={(props) =>
+            <Signup {...props} updateUser={this.updateUser} />
+          } />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/events' component={EventCard} />
+          <Route exact path='/planEvents' component={CreateEvent} />
+          <Route exact path='/myProfile' component={MyProfile} />
+        </Switch>
       </Router>
     );
   }
