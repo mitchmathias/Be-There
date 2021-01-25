@@ -119,50 +119,50 @@ class Signup extends Component {
 										<div className="form-group">
 											<div className="col-mb-auto">
 												<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													type="text"
-													id="username"
-													name="username"
-													placeholder="Username"
-													value={this.state.username}
-													onChange={this.handleChange}
-													required
-												/>
-											</div>
+									</div>
+									<div className="form-group">
+										<div className="col-mb-auto">
+											<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
 										</div>
-										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													placeholder="Password"
-													type="password"
-													name="password"
-													value={this.state.password}
-													onChange={this.handleChange}
-													required
-												/>
-											</div>
+										<div className="col-mb-auto">
+											<input className="form-input"
+												type="text"
+												id="username"
+												name="username"
+												placeholder="Username"
+												value={this.state.username}
+												onChange={this.handleChange}
+											/>
 										</div>
-										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													placeholder="Confirm Password"
-													type="password"
-													name="confirmPassword"
-													value={this.state.confirmPassword}
-													onChange={this.handleChange}
-													required
-												/>
-											</div>
+									</div>
+									<div className="form-group">
+										<div className="col-mb-auto">
+											<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
 										</div>
-
+										<div className="col-mb-auto">
+											<input className="form-input"
+												placeholder="Password"
+												type="password"
+												name="password"
+												value={this.state.password}
+												onChange={this.handleChange}
+											/>
+										</div>
+									</div>
+									<div className="form-group">
+										<div className="col-mb-auto">
+											<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
+										</div>
+										<div className="col-mb-auto">
+											<input className="form-input"
+												placeholder="Confirm Password"
+												type="password"
+												name="confirmPassword"
+												value={this.state.confirmPassword}
+												onChange={this.handleChange}
+											/>
+										</div>
+									</div>
 										<div className="form-group">
 											<div className="">
 												<button
