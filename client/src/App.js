@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Wrapper from './components/Wrapper';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import EventCard from './components/EventCard';
+import CreateEvent from './components/CreateEvent';
+import MyProfile from './components/Wrapper';
 import LandingNav from './components/Navs/LandingNav'
 import Landing from './pages/landing'
 import Home from './pages/home'
@@ -66,23 +68,20 @@ class App extends Component {
       <Router>
         <Welcome />
         <LandingNav />
+        <Switch >
         <Route path='/signup' render={(props) =>
           <Signup {...props} updateUser={this.updateUser} />
         } />
         <Route path='/login' render={(props) =>
           <Login {...props} updateUser={this.updateUser} />
         } />
-
-        {/* <Route path='/signup' exact component={Signup} />
-            <Route path='/login' exact component={Login} /> */}
-
         {/* Remove Below Later */}
 
-        {/* <HomeNav /> */}
-        {/* <Route exact path='/events' component={EventCard} />
-        <Route exact path='/planEvents' component={CreateEvent} />
-        <Route exact path='/myProfile' component={MyProfile} /> */}
-
+        <HomeNav />
+        <Route path='/events' to={EventCard} />
+        <Route path='/planEvents'  component={CreateEvent} />
+        <Route  path='/myProfile'  render={() => <MyProfile />} />
+        </Switch>
         {/* Remove Above Later  */}
 
         <Footer />
