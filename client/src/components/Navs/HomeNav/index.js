@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import './style.css'
 import Typography from '@material-ui/core/Typography'
 
 const HomeNav = () => {
     return (
-        <Router>
+        
             <Typography className="navbar sticky-top navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav mr-auto">
                     <div className="nav-item">
@@ -23,7 +22,7 @@ const HomeNav = () => {
                     </div>
                 </div>
             </Typography>
-        </Router>
+        
     )
 };
 
