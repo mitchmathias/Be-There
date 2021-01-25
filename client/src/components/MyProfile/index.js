@@ -13,6 +13,7 @@ const MyProfile = () => {
             {/* ADD PAGE HERE */}
             <h1>CREATE ME</h1>
             {/* ADD PAGE HERE */}
+            
             <Footer />
         </div>
     )
