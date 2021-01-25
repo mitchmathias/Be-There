@@ -1,108 +1,166 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
 
-  
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-}));
+
 
 const CreateEvent = () => {
 
-  const classes = useStyles();
-  
+  const [organization, setOrganization] = useState("")
+  const [eventName, setEventName] = useState("")
+  const [location, setLocation] = useState("")
+  const [date, setDate] = useState("")
+  const [description, setDescription] = useState("")
+  const [imgUrl, setImgUrl] = useState("")
+
+  const useStyles = makeStyles((theme) => ({
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+    },
+  }));
+
+  // const classes = useStyles();
+
+
+
+  function handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+  function handleSubmit(event) {
+    console.log(this.state.username);
+    event.preventDefault();
+
+    axios
+      .post("/api/users", {
+        organization: this.state.organization,
+        eventName: this.state.eventName,
+        email: this.state.email,
+        location: this.state.location,
+        description: this.state.description
+      })
+      .then((response) => {
+        console.log(response);
+        if (!response.data.errmsg) {
+          console.log("successful submit");
+          this.setState({
+            redirectTo: "/events"
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("submit error: ");
+        console.log(error);
+      });
+  }
+
+  // render() {
   return (
     <Container>
-      <Box  component="span" m={1} >
-        <h1>Create Your Event</h1>
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">
-            Organization Name
-          </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Organization"
-            aria-label="Organization"
-            aria-describedby="basic-addon1"
-          />
-        </div>
 
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">
-            Event Name
+      <Box component="span" m={1} >
+        <form className={useStyles.container} noValidate>
+          <h1>Create Your Event</h1>
+          <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon1">
+              Organization Name
           </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Event"
-            aria-label="Event"
-            aria-describedby="basic-addon1"
-          />
-        </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Organization"
+              aria-label="Organization"
+              aria-describedby="basic-addon1"
+              value={organization}
+              onChange={e => setOrganization(e.target.value)}
+            />
+          </div>
 
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">
-            Event Location
+          <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon1">
+              Event Name
           </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Location"
-            aria-label="Location"
-            aria-describedby="basic-addon1"
-          />
-        </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Event"
+              aria-label="Event"
+              aria-describedby="basic-addon1"
+              value={eventName}
+              onChange={e => setEventName(e.target.value)}
+            />
+          </div>
+
+          <div className="input-group mb-3">
+            <span className="input-group-text" id="basic-addon1">
+              Event Location
+          </span>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Location"
+              aria-label="Location"
+              aria-describedby="basic-addon1"
+              value={location}
+              onChange={e => setLocation(e.target.value)}
+            />
+          </div>
           <div>
-         <form className={classes.container} noValidate>
-      <TextField
-        id="date"
-        label="Birthday"
-        type="date"
-        defaultValue="2017-05-24"
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-      </form>
+              <TextField
+                id="date"
+                label="Birthday"
+                type="date"
+                defaultValue="2017-05-24"
+                value={date}
+                onChange={e => setDate(e.target.value)}
+                className={useStyles.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+      
         </div>
-        <div className="input-group mb-3">
-          <span className="input-group-text">Description</span>
-          <textarea
-            className="form-control"
-            aria-label="Description"
-          ></textarea>
-        </div>
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="addon-wrapping">
-            @
+            <div className="input-group mb-3">
+              <span className="input-group-text">Description</span>
+              <textarea
+                className="form-control"
+                aria-label="Description"
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+              ></textarea>
+            </div>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="addon-wrapping">
+                @
           </span>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Linke to your image"
-            aria-label="image url"
-            aria-describedby="addon-wrapping"
-          />
-        </div>
-        <button type="button" className="btn btn-secondary">
-          Create
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Linke to your image"
+                aria-label="image url"
+                aria-describedby="addon-wrapping"
+                value={imgUrl}
+                onChange={e => setImgUrl(e.target.value)}
+              />
+            </div>
+            <button type="button" className="btn btn-secondary">
+              Create
         </button>
+        </form>
       </Box>
     </Container>
   );
-}
+      }
 
 export default CreateEvent;
