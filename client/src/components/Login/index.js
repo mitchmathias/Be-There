@@ -56,7 +56,7 @@ class Login extends Component {
                     })
                     console.log("weMadeIT")
                     this.setState({
-                        redirectTo: '/home'
+                        redirectTo: '/events'
                     })
 
                 }

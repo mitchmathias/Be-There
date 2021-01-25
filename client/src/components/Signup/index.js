@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import './style.css'
 import LandingNav from '../Navs/LandingNav';
@@ -46,7 +47,7 @@ class Signup extends Component {
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({
-						redirectTo: '/login'
+						redirectTo: '/events'
 					})
 				} else {
 					console.log('username already taken')
@@ -59,6 +60,9 @@ class Signup extends Component {
 	}
 
 	render() {
+		if (this.state.redirectTo) {
+            return <Redirect to={{ pathname: this.state.redirectTo }} />
+        } else {
 		return (
 			<div>
 				<Welcome />
@@ -117,59 +121,57 @@ class Signup extends Component {
 											</div>
 										</div>
 										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
-									</div>
-									<div className="form-group">
-										<div className="col-mb-auto">
-											<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
-										</div>
-										<div className="col-mb-auto">
-											<input className="form-input"
-												type="text"
-												id="username"
-												name="username"
-												placeholder="Username"
-												value={this.state.username}
-												onChange={this.handleChange}
-											/>
-										</div>
-									</div>
-									<div className="form-group">
-										<div className="col-mb-auto">
-											<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
-										</div>
-										<div className="col-mb-auto">
-											<input className="form-input"
-												placeholder="Password"
-												type="password"
-												name="password"
-												value={this.state.password}
-												onChange={this.handleChange}
-											/>
-										</div>
-									</div>
-									<div className="form-group">
-										<div className="col-mb-auto">
-											<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
-										</div>
-										<div className="col-mb-auto">
-											<input className="form-input"
-												placeholder="Confirm Password"
-												type="password"
-												name="confirmPassword"
-												value={this.state.confirmPassword}
-												onChange={this.handleChange}
-											/>
-										</div>
-									</div>
-										<div className="form-group">
-											<div className="">
-												<button
-													className="btn btn-primary col-mb-auto"
-													onClick={this.handleSubmit}
-													type="submit"
-												><h5>Sign up</h5></button>
+											<div className="form-group">
+												<div className="col-mb-auto">
+													<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
+												</div>
+												<div className="col-mb-auto">
+													<input className="form-input"
+														type="text"
+														id="username"
+														name="username"
+														placeholder="Username"
+														value={this.state.username}
+														onChange={this.handleChange}
+													/>
+												</div>
+											</div>
+											<div className="form-group">
+												<div className="col-mb-auto">
+													<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
+												</div>
+												<div className="col-mb-auto">
+													<input className="form-input"
+														placeholder="Password"
+														type="password"
+														name="password"
+														value={this.state.password}
+														onChange={this.handleChange}
+													/>
+												</div>
+											</div>
+											<div className="form-group">
+												<div className="col-mb-auto">
+													<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
+												</div>
+												<div className="col-mb-auto">
+													<input className="form-input"
+														placeholder="Confirm Password"
+														type="password"
+														name="confirmPassword"
+														value={this.state.confirmPassword}
+														onChange={this.handleChange}
+													/>
+												</div>
+											</div>
+											<div className="form-group">
+												<div className="">
+													<button
+														className="btn btn-primary col-mb-auto"
+														onClick={this.handleSubmit}
+														type="submit"
+													><h5>Sign up</h5></button>
+												</div>
 											</div>
 										</div>
 									</form>
@@ -182,6 +184,7 @@ class Signup extends Component {
 			</div>
 		)
 	}
+}
 }
 
 export default Signup
