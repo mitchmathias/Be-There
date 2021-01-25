@@ -52,9 +52,9 @@ class Login extends Component {
                         username: response.data.username
                     })
                     console.log("weMadeIT")
-                    // this.setState({
-                    //     redirectTo: '/home'
-                    // })
+                    this.setState({
+                        redirectTo: '/home'
+                    })
 
                 }
             }).catch(error => {
@@ -66,7 +66,7 @@ class Login extends Component {
                 username: "",
                 password: ""
             })
-            this.props.history.push("/myProfile");
+            // this.props.history.push("/myProfile");
     }
 
     render() {

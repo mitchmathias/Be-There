@@ -28,6 +28,7 @@
         "mongoose": "^5.3.16",
         "mongoose-uuid2": "^2.3.0",
         "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
         "react-calendar": "^3.3.0",
         "react-scripts": "^4.0.1",
         "uuid": "^8.3.2"

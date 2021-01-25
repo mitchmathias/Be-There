@@ -13,6 +13,7 @@ import CreateEvent from '../components/CreateEvent'
 import Feed from '../components/Feed';
 import EventCard from '../components/EventCard';
 import MyProfile from '../components/MyProfile'
+import Home from '../pages/home'
 
 const Landing = () => {
 
@@ -20,23 +21,20 @@ const Landing = () => {
         <Router>
             <Welcome />
             <LandingNav />
-            <Route path='/signup' render={(props) =>
+            {/* <Route path='/signup' render={(props) =>
                 <Signup {...props} updateUser={this.updateUser} />
             } />
             <Route path='/login' render={(props) =>
                 <Login {...props} updateUser={this.updateUser} />
-            } />
+            } /> */}
 
             {/* <Route path='/signup' exact component={Signup} />
             <Route path='/login' exact component={Login} /> */}
 
             {/* Remove Below Later */}
 
-            <HomeNav />
-            <Route exact path='/events' component={EventCard} />
-            <Route exact path='/planEvents' component={CreateEvent} />
-            <Route exact path='/myProfile' component={MyProfile} />
-
+            <Route path='/home' component={Home} />
+           
             {/* Remove Above Later  */}
 
             <Footer />

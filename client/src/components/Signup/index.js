@@ -76,6 +76,7 @@ class Signup extends Component {
 												name="firstName"
 												value={this.state.firstName}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>
@@ -90,6 +91,7 @@ class Signup extends Component {
 												name="lastName"
 												value={this.state.lastName}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>
@@ -105,6 +107,7 @@ class Signup extends Component {
 												placeholder="Email"
 												value={this.state.email}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>
@@ -120,6 +123,7 @@ class Signup extends Component {
 												placeholder="Username"
 												value={this.state.username}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>
@@ -134,6 +138,7 @@ class Signup extends Component {
 												name="password"
 												value={this.state.password}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>
@@ -148,6 +153,7 @@ class Signup extends Component {
 												name="confirmPassword"
 												value={this.state.confirmPassword}
 												onChange={this.handleChange}
+												required
 											/>
 										</div>
 									</div>

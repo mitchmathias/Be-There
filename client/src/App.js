@@ -66,25 +66,24 @@ class App extends Component {
       // </Router>
 
       <Router>
-        <Welcome />
-        <LandingNav />
-        <Switch >
+        <Switch>
+        <Route exact path='/' component={Landing} />
+
         <Route path='/signup' render={(props) =>
           <Signup {...props} updateUser={this.updateUser} />
         } />
         <Route path='/login' render={(props) =>
           <Login {...props} updateUser={this.updateUser} />
         } />
+  
         {/* Remove Below Later */}
-
-        <HomeNav />
-        <Route path='/events' to={EventCard} />
-        <Route path='/planEvents'  component={CreateEvent} />
-        <Route  path='/myProfile'  render={() => <MyProfile />} />
-        </Switch>
+        
+        <Route path ='/home' component={Home} />
+        
+        
         {/* Remove Above Later  */}
-
-        <Footer />
+        </Switch>
+        
       </Router>
     );
   }
