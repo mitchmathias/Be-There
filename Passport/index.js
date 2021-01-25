@@ -1,6 +1,6 @@
 const passport = require('passport')
 const Authenticate = require('./Passport')
-const User = require('../../../../models/user')
+const User = require('../models/user')
 
 passport.serializeUser((user, done) => {
 	console.log('SerializeUser: ')

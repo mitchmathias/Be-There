@@ -1,10 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-// import { Link } from "react-router-dom";
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import Box from '@material-ui/core/Box'
 import Container from '@material-ui/core/Container'
 import Card from '@material-ui/core/Card'
-import Signup from '../../Signup'
 import './style.css'
 
 const LandingNav = () => {
