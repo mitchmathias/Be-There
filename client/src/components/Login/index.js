@@ -79,7 +79,7 @@ class Login extends Component {
         } else {
             return (
                 <Wrapper>
-                    <video src='/videos/BLM.mp4' autoPlay loop muted />
+                    <img src='/images/group-pic.jpg' alt="group"/>
                     <Welcome />
                     <LandingNav />
                     <Container>
