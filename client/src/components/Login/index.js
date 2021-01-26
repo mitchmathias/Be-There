@@ -8,6 +8,7 @@ import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import LandingNav from '../Navs/LandingNav'
 import Footer from '../Footer'
+import Wrapper from '../Wrapper'
 
 class Login extends Component {
 
@@ -77,7 +78,8 @@ class Login extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
+                <Wrapper>
+                    <video src='/videos/BLM.mp4' autoPlay loop muted />
                     <Welcome />
                     <LandingNav />
                     <Container>
@@ -134,8 +136,7 @@ class Login extends Component {
                         </Box>
                     </Container>
                     <Footer />
-                </div>
-            )
+                </Wrapper>)
         }
     }
 }
