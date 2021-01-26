@@ -16,9 +16,9 @@ app.use(passport.session())
 //adding routes to the API and view
 app.use(routes);
 
-// if (process.env.NODE_ENV == "production") {
-//     app.use(express.static("/client/build"));
-// }
+if (process.env.NODE_ENV == "production") {
+    app.use(express.static("/client/build"));
+}
 // if (process.env.NODE_ENV) {
 //     app.use(express.static('client/build'));
 //     const path = require('path');
