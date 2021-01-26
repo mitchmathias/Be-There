@@ -37,7 +37,6 @@ const CreateEvent = () => {
 
 
   function handleSubmit(event) {
-    // console.log(this.state.username);
     event.preventDefault();
 
     axios
@@ -133,6 +132,7 @@ const CreateEvent = () => {
               <span className="input-group-text">Description</span>
               <textarea
                 className="form-control"
+                placeholder="ie: time of the event"
                 aria-label="Description"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
