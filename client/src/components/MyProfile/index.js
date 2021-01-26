@@ -5,11 +5,7 @@ import LandingNav from '../Navs/LandingNav';
 import Wrapper from '../Wrapper';
 
 const MyProfile = () => {
-    axios.get('/:id', {
-        params: {
-          id: this.state.id
-        }
-        }).then((response) => {
+    axios.get('/api/users/me').then((response) => {
           console.log(response);
           if (!response.data.errmsg) {
             console.log("successful submit");

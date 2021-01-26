@@ -4,16 +4,9 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-<<<<<<< HEAD
 import Jumbotron from '../Jumbotron'
 import HomeNav from '../Navs/HomeNav'
 import Wrapper from '../Wrapper'
-=======
-import Jumbotron from '../Jumbotron';
-import HomeNav from '../Navs/HomeNav';
-import Footer from '../Footer';
-import Wrapper from '../Wrapper';
->>>>>>> b17774b8b6da30d038e35d4cdd04c6e0fceafc3c
 
 
 

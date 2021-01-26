@@ -48,5 +48,10 @@ router.post('/logout', (req, res) => {
         res.send({ msg: 'not logged in' })
     }
 })
+router.get('/me', (req, res)=>{
+    console.log(req.session , "<=======>>>>>")
+    if(!req.user) return res.sendStatus(403)
+    console.log(req.user, "<===")
+})
 
 module.exports = router
