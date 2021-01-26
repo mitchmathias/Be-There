@@ -17,11 +17,11 @@ app.use(passport.session())
 app.use(routes);
 
 if (process.env.NODE_ENV == "production") {
-    app.use(express.static("client/build"));
+    app.use(express.static("/client/build"));
 }
 
 // connecnt to Mongo Db
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BeThereDB",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BeThereDb",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
