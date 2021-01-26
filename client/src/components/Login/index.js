@@ -5,6 +5,10 @@ import './style.css'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
+import Welcome from '../Welcome'
+import LandingNav from '../Navs/LandingNav'
+import Footer from '../Footer'
+import Wrapper from '../Wrapper'
 
 class Login extends Component {
 
@@ -52,9 +56,9 @@ class Login extends Component {
                         username: response.data.username
                     })
                     console.log("weMadeIT")
-                    // this.setState({
-                    //     redirectTo: '/home'
-                    // })
+                    this.setState({
+                        redirectTo: '/events'
+                    })
 
                 }
             }).catch(error => {
@@ -62,11 +66,11 @@ class Login extends Component {
                 console.log(error);
 
             })
-            this.setState({
-                username: "",
-                password: ""
-            })
-            this.props.history.push("/myProfile");
+        this.setState({
+            username: "",
+            password: ""
+        })
+        // this.props.history.push("/myProfile");
     }
 
     render() {
@@ -74,60 +78,65 @@ class Login extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <Container>
-                    <Box>
-                        <div className="row d-flex justify-content-center">
-                            <Card>
-                                <div className="card-body">
-                                    <h1 className="card-title">Login</h1>
-                                    <form onSubmit={this.onSubmit} className="form-horizontal">
-                                        <div className="form-group">
-                                            <div className=" col-mr-auto">
-                                                <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
+                <Wrapper>
+                    <video src='/videos/BLM.mp4' autoPlay loop muted />
+                    <Welcome />
+                    <LandingNav />
+                    <Container>
+                        <Box>
+                            <div className="row d-flex justify-content-center">
+                                <Card>
+                                    <div className="card-body">
+                                        <h1 className="card-title">Login</h1>
+                                        <form onSubmit={this.onSubmit} className="form-horizontal">
+                                            <div className="form-group">
+                                                <div className=" col-mr-auto">
+                                                    <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
+                                                </div>
+                                                <div className=" col-mr-auto">
+                                                    <input className="form-input"
+                                                        type="text"
+                                                        id="username"
+                                                        name="username"
+                                                        placeholder="Username"
+                                                        value={this.state.username}
+                                                        onChange={this.onChangeUsername}
+                                                    />
+                                                </div>
                                             </div>
-                                            <div className=" col-mr-auto">
-                                                <input className="form-input"
-                                                    type="text"
-                                                    id="username"
-                                                    name="username"
-                                                    placeholder="Username"
-                                                    value={this.state.username}
-                                                    onChange={this.onChangeUsername}
-                                                />
+                                            <div className="form-group">
+                                                <div className=" col-mr-auto">
+                                                    <label className="form-label" htmlFor="password"><h4>Password:</h4></label>
+                                                </div>
+                                                <div className=" col-mr-auto">
+                                                    <input className="form-input"
+                                                        placeholder="password"
+                                                        id="password"
+                                                        type="password"
+                                                        name="password"
+                                                        value={this.state.password}
+                                                        onChange={this.onchangePassword}
+                                                    />
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="form-group">
-                                            <div className=" col-mr-auto">
-                                                <label className="form-label" htmlFor="password"><h4>Password:</h4></label>
+                                            <div className="form-group">
+                                                <div className="">
+                                                    <button
+                                                        className="btn btn-primary  col-mr-auto col-mb-auto"
+                                                        onClick={this.onSubmit}
+                                                        variant='success'
+                                                        type="submit"><h5>Login</h5>
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className=" col-mr-auto">
-                                                <input className="form-input"
-                                                    placeholder="password"
-                                                    id="password"
-                                                    type="password"
-                                                    name="password"
-                                                    value={this.state.password}
-                                                    onChange={this.onchangePassword}
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="form-group">
-                                            <div className="">
-                                                <button
-                                                    className="btn btn-primary  col-mr-auto col-mb-auto"
-                                                    onClick={this.onSubmit}
-                                                    variant='success'
-                                                    type="submit"><h5>Login</h5>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </Card>
-                        </div>
-                    </Box>
-                </Container>
-            )
+                                        </form>
+                                    </div>
+                                </Card>
+                            </div>
+                        </Box>
+                    </Container>
+                    <Footer />
+                </Wrapper>)
         }
     }
 }

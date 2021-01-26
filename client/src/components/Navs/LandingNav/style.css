@@ -9,3 +9,7 @@ h5{
     }
 
 }
+
+.card-body{
+    background-color: transparent !important;
+}

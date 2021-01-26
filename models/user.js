@@ -31,19 +31,7 @@ const userSchema = new Schema({
         type: String,
         lowercase: true,
         required: true
-    },
-	location: {
-		type: {
-		  type: String, 
-		  enum: ['Point'],
-		  required: false
-		},
-		coordinates: {
-		  type: [Number],
-		  required: false
-		}
-	  } 
-	
+    },	
 })
 
 userSchema.methods = {
