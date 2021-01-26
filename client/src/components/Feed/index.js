@@ -4,6 +4,7 @@ import API from '../../utils/API'
 import '../../style.css'
 import { List, ListItem } from "../List";
 import EventCard from '../EventCard';
+import FakeFeed from './FakeFeed';
 
 class Feed extends Component {
 
@@ -56,7 +57,7 @@ class Feed extends Component {
 
                             <List>
                                     <ListItem filtEvents ={this.state.filtEvents}/>
-                                    <EventCard />
+                                    <FakeFeed />
                             </List>
                     </Col>
                 </Row>

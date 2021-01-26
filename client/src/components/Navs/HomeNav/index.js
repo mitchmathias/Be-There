@@ -45,17 +45,17 @@ return(
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
                     <li className='nav-item'>
-                        <Link to="/feed" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
+                        <Link to="/planEvents" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
                         <CreateEvent />}Plan an Event
                     </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
+                        <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
                         <MyProfile />}Profile
                     </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
+                        <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
                         <Feed />}Discover
                     </Link>
                     </li>

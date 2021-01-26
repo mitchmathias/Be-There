@@ -4,9 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import '../../style.css'
-
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -31,14 +28,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const EventCard = () => {
 
-
-
+export function EventList ({children}){
+return 
+    <ul className="list-group">{children}</ul>;
+}
+//above creates a list for each li which will be the event cards displayed down feed
+export function EventListItem({
+    title,
+    body,
+    organization,
+    location,
+    date,
+}) {
     const classes = useStyles();
     return (
-        <div>
-            <div className={classes.root}>
+        <li className="list-group-item">
+             <div className={classes.root}>
                 <Paper className={classes.paper}>
                     <Grid container spacing={2}>
                         <Grid item>
@@ -72,9 +78,6 @@ const EventCard = () => {
                     </Grid>
                 </Paper>
             </div>
-        </div>
+        </li>
     )
 }
-
-export default EventCard
-
