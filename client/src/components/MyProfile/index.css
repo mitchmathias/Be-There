@@ -1,3 +1,7 @@
 .edit{
     display: "none"
 }
+
+.caps{
+    text-transform: capitalize;
+}
