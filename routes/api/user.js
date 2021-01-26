@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const User = require('../../controllers/volunteersController');
 const passport = require('../../Passport');
-
+const UserModel = require('../../models/user')
 router.post('/', User.create);
 
 router.post(
@@ -49,9 +49,13 @@ router.post('/logout', (req, res) => {
     }
 })
 router.get('/me', (req, res)=>{
-    console.log(req.session , "<=======>>>>>")
+    console.log(req.user._id , "<=======>>>>>")
     if(!req.user) return res.sendStatus(403)
-    console.log(req.user, "<===")
+    UserModel.findById(req.user._id, (err, user)=>{
+        user.password = "";
+        return res.json(user)
+    })
+    
 })
 
 module.exports = router
