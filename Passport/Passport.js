@@ -7,10 +7,12 @@ const strategy = new LocalStrategy(
 	},
 	function(username, password, done) {
 		User.findOne({ username: username }, (err, user) => {
+			console.log(username, user, err)
 			if (err) {
 				return done(err)
 			}
 			if (!user) {
+				console.log('not found')
 				return done(null, false, { message: 'Incorrect username' })
 			}
 			if (!user.checkPassword(password)) {
