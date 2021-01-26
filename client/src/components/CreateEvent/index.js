@@ -37,7 +37,7 @@ const CreateEvent = () => {
 
 
   function handleSubmit(event) {
-    console.log(this.state.username);
+    // console.log(this.state.username);
     event.preventDefault();
 
     axios

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
+import LandingNav from '../Navs/LandingNav';
+import Footer from '../Footer';
+import Wrapper from '../Wrapper';
 
 const MyProfile = () => {
     axios.get('/:id', {
         params: {
-          id: `${id}`
+          id: this.state.id
         }
         }).then((response) => {
           console.log(response);
