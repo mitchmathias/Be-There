@@ -9,11 +9,11 @@ const LandingNav = () => {
     return (
         <Container>
             <Box component="span" m={1}>
-                <div className="row d-flex justify-content-center">
+                <div className="row d-flex justify-content-center navbox">
                     <Card>
-                        <div className="card-body">
+                        <div className="card-body navbox">
                             <nav className="navbar navbar-expand">
-                                <div className="navbar-nav mr-auto">
+                                <div className="navbar-nav mr-auto navbox">
                                     <div className="navbar-nav col-mr-auto">
                                         <div className="nav-item">
                                             <NavLink className="nav-link active nav-link" to='/login' exact><h4>Login</h4></NavLink>

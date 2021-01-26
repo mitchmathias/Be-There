@@ -1,22 +1,44 @@
 import React from 'react'
-import Jumbotron from '../Jumbotron'
-import HomeNav from '../Navs/HomeNav'
-import Footer from '../Footer'
 
 
 const MyProfile = () => {
-    return (
-        <div>
-            <Jumbotron />
-            < HomeNav />
 
-            {/* ADD PAGE HERE */}
-            <h1>CREATE ME</h1>
-            {/* ADD PAGE HERE */}
-            
-            <Footer />
+
+
+  
+    // axios.get('/:id', {
+    //     params: {
+    //       id: `${id}`
+    //     }
+    //     }).then((response) => {
+    //       console.log(response);
+    //       if (!response.data.errmsg) {
+    //         console.log("successful submit");
+    //         // this.setState({
+    //         //   redirectTo: "/events"
+    //         // });
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.log("submit error: ");
+    //       console.log(error);
+    //     });
+    ///WHAT IS THIS^^ its not defined 
+
+    return (
+        
+        <div class="container">
+            <h3>{this.state.username}</h3>
+            <br />
+            <p>Email address: {this.state.email}</p>
+            <br />
+            <p>First name: {this.state.firstName}</p>
+            <br />
+            <p>Last name: {this.state.lastName}</p>
+            <br />
+            <p>Location: {this.state.location}</p>
+            <br />
         </div>
     )
 }
-
-export default MyProfile
+export default MyProfile;

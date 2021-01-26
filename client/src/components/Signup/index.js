@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Footer from '../Footer';
 import Welcome from '../Welcome'
+import Wrapper from '../Wrapper'
 
 class Signup extends Component {
 	constructor() {
@@ -65,6 +66,8 @@ class Signup extends Component {
         } else {
 		return (
 			<div>
+				<Wrapper>
+				<img src='/images/treeHands.jpg' alt="dirty hands"/>
 				<Welcome />
 				<LandingNav />
 				<Container>
@@ -181,6 +184,7 @@ class Signup extends Component {
 					</Box>
 				</Container>
 				<Footer />
+				</Wrapper>
 			</div>
 		)
 	}

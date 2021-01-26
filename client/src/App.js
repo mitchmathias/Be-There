@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import EventCard from './components/EventCard';
+import Feed from './components/Feed';
 import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
@@ -68,8 +68,8 @@ class App extends Component {
           <Route path='/signup' render={(props) =>
             <Signup {...props} updateUser={this.updateUser} />
           } />
-          
-          <Route exact path='/events' component={EventCard} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path='/events' component={Feed} />
           <Route exact path='/planEvents' component={CreateEvent} />
           <Route exact path='/myProfile' component={MyProfile} />
         </Switch>

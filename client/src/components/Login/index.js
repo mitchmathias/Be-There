@@ -125,6 +125,7 @@ class Login extends Component {
                                                         className="btn btn-primary  col-mr-auto col-mb-auto"
                                                         onClick={this.onSubmit}
                                                         variant='success'
+                                                        color="primary"
                                                         type="submit"><h5>Login</h5>
                                                     </button>
                                                 </div>
