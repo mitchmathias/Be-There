@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import LandingNav from '../Navs/LandingNav'
-import Footer from '../Footer'
+
 import Wrapper from '../Wrapper'
 
 class Login extends Component {
@@ -135,7 +135,6 @@ class Login extends Component {
                             </div>
                         </Box>
                     </Container>
-                    <Footer />
                 </Wrapper>)
         }
     }

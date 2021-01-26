@@ -6,7 +6,6 @@ import LandingNav from '../Navs/LandingNav';
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
-import Footer from '../Footer';
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
 
@@ -182,7 +181,6 @@ class Signup extends Component {
 						</div>
 					</Box>
 				</Container>
-				<Footer />
 			</Wrapper>
 		)
 	}

@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import LandingNav from '../Navs/LandingNav';
-import Footer from '../Footer';
 import Wrapper from '../Wrapper';
 
 const MyProfile = () => {
-    axios.get('/:id', {
-        params: {
-          id: this.state.id
-        }
-        }).then((response) => {
+    axios.get('/api/users/me').then((response) => {
           console.log(response);
           if (!response.data.errmsg) {
             console.log("successful submit");

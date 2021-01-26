@@ -9,6 +9,7 @@ import './App.css';
 import Signup from './components/Signup'
 import Login from './components/Login'
 import axios from 'axios'
+import Footer from './components/Footer';
 
 
 class App extends Component {
@@ -58,9 +59,11 @@ class App extends Component {
 
     return (
       <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Landing />
+        <div className="switch">
+
+        <Switch >
+          <Route exact path='/' component={Landing}>
+           
           </Route>
           <Route path='/login' render={(props) =>
             <Login {...props} updateUser={this.updateUser} />
@@ -74,6 +77,8 @@ class App extends Component {
           <Route exact path='/myProfile' component={MyProfile} />
           <Route exact path='/logout' component={Login} />
         </Switch>
+        </div>
+        <Footer/>
       </Router>
     );
   }

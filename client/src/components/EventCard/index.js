@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Jumbotron from '../Jumbotron'
 import HomeNav from '../Navs/HomeNav'
-import Footer from '../Footer'
 import '../../style.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -71,7 +70,6 @@ const EventCard = () => {
                     </Grid>
                 </Paper>
             </div>
-            <Footer />
         </div>
     )
 }
