@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import LandingNav from '../Navs/LandingNav';
-import Footer from '../Footer';
 import Wrapper from '../Wrapper';
 
 const MyProfile = () => {

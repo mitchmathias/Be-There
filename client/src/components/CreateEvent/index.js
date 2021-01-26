@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Jumbotron from '../Jumbotron'
 import HomeNav from '../Navs/HomeNav'
-import Footer from '../Footer'
 import Wrapper from '../Wrapper'
 
 
@@ -163,7 +162,6 @@ const CreateEvent = () => {
         </form>
       </Box>
     </Container>
-    <Footer />
     </Wrapper> 
   );
       }
