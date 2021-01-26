@@ -1,8 +1,8 @@
-h3 {
-    font-weight: normal !important;
+.white {
+    font-weight: 200px !important;
+    color: white;
 }
 
-div {
+.jumbotron{
     background-color: transparent !important;
-    background: transparent;
 }
