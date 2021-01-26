@@ -22,6 +22,14 @@ router.post(
     }
 )
 
+router.get(
+    '/logout',
+    function(req,res){
+        req.logout();
+        res.redirect('/');
+    }
+)
+
 router.get('/', (req, res, next) => {
     console.log('get user')
     console.log(req.user)
