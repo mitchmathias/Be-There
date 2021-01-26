@@ -112,10 +112,10 @@ const CreateEvent = () => {
               onChange={e => setLocation(e.target.value)}
             />
           </div>
-          <div>
+          <div className="mb-3">
               <TextField
                 id="date"
-                label="Birthday"
+                label="Date"
                 type="date"
                 
                 value={date}
@@ -129,13 +129,13 @@ const CreateEvent = () => {
         </div>
             <div className="input-group mb-3">
               <span className="input-group-text">Description</span>
-              <textarea
+              <input
                 className="form-control"
-                placeholder="ie: time of the event"
+                placeholder="What to bring, Check in area/time, ect."
                 aria-label="Description"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
-              ></textarea>
+              />
             </div>
             <div className="input-group mb-3">
               <span className="input-group-text" id="addon-wrapping">
