@@ -1,5 +1,4 @@
 {
-    "homepage": "https://be-there-project.herokuapp.com/",
     "name": "be-there",
     "version": "1.0.0",
     "description": "",
@@ -21,7 +20,6 @@
         "nodemon": "^1.19.4"
     },
     "dependencies": {
-        "@material-ui/core": "^4.11.2",
         "axios": "^0.21.1",
         "bcryptjs": "^2.4.3",
         "express": "^4.16.3",
@@ -31,8 +29,6 @@
         "mongoose-uuid2": "^2.3.0",
         "passport": "^0.4.1",
         "passport-local": "^1.0.0",
-        "react-calendar": "^3.3.0",
-        "react-scripts": "^4.0.1",
         "uuid": "^8.3.2"
     }
 }
