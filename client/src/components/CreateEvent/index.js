@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Jumbotron from '../Jumbotron'
-import HomeNav from '../Navs/HomeNav'
-import Footer from '../Footer'
-import Wrapper from '../Wrapper'
+import Jumbotron from '../Jumbotron';
+import HomeNav from '../Navs/HomeNav';
+import Footer from '../Footer';
+import Wrapper from '../Wrapper';
 
 
 
@@ -33,8 +33,6 @@ const CreateEvent = () => {
     },
   }));
 
-  // const classes = useStyles();
-
 
 
 
@@ -54,9 +52,6 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-          // this.setState({
-          //   redirectTo: "/events"
-          // });
         }
       })
       .catch((error) => {
@@ -157,7 +152,7 @@ const CreateEvent = () => {
                 onChange={e => setImgUrl(e.target.value)}
               />
             </div>
-            <button type="button" onClick={handleSubmit} className="btn btn-secondary">
+            <button type="button" className="btn btn-secondary" onClick={handleSubmit}>
               Create
         </button>
         </form>
