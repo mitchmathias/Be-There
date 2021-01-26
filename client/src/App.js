@@ -72,6 +72,7 @@ class App extends Component {
           <Route exact path='/events' component={EventCard} />
           <Route exact path='/planEvents' component={CreateEvent} />
           <Route exact path='/myProfile' component={MyProfile} />
+          <Route exact path='/logout' component={Login} />
         </Switch>
       </Router>
     );
