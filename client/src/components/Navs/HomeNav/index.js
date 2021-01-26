@@ -21,6 +21,11 @@ const HomeNav = () => {
                         <NavLink to='/myProfile' exact className="nav-link active nav-link"><h5>My Profile</h5> </NavLink>
                     </div>
                 </div>
+                <div className="navbar-nav ml-auto">
+                    <div className="nav-item">
+                        <NavLink to='/logout' exact className="nav-link active nav-link"><h5>Logout</h5> </NavLink>
+                    </div>
+                </div>
             </Typography>
         
     )
