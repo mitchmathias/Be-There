@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Footer from '../Footer';
 import Welcome from '../Welcome'
+import Wrapper from '../Wrapper'
 
 class Signup extends Component {
 	constructor() {
@@ -64,9 +65,10 @@ class Signup extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
 		return (
-			<div>
-				<Welcome />
-				<LandingNav />
+			<Wrapper>
+			<video src='/videos/BLM.mp4' autoPlay loop muted />
+			<Welcome />
+			<LandingNav />
 				<Container>
 					<Box>
 						<div className="row d-flex justify-content-center">
@@ -181,7 +183,7 @@ class Signup extends Component {
 					</Box>
 				</Container>
 				<Footer />
-			</div>
+			</Wrapper>
 		)
 	}
 }
