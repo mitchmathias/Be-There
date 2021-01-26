@@ -133,6 +133,7 @@ const CreateEvent = () => {
               <span className="input-group-text">Description</span>
               <textarea
                 className="form-control"
+                placeholder="ie: time of the event"
                 aria-label="Description"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
