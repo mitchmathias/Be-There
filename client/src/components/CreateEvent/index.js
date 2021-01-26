@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import Jumbotron from '../Jumbotron'
 import HomeNav from '../Navs/HomeNav'
 import Footer from '../Footer'
+import Wrapper from '../Wrapper'
 
 
 
@@ -38,7 +39,7 @@ const CreateEvent = () => {
 
 
   function handleSubmit(event) {
-    console.log(this.state.username);
+    // console.log(this.state.username);
     event.preventDefault();
 
     axios
@@ -53,9 +54,9 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-          this.setState({
-            redirectTo: "/events"
-          });
+          // this.setState({
+          //   redirectTo: "/events"
+          // });
         }
       })
       .catch((error) => {
@@ -64,8 +65,11 @@ const CreateEvent = () => {
       });
   }
 
-  // render() {
+
   return (
+    <Wrapper>
+    <Jumbotron />
+    < HomeNav />
     <Container>
 
       <Box component="span" m={1} >
@@ -153,12 +157,14 @@ const CreateEvent = () => {
                 onChange={e => setImgUrl(e.target.value)}
               />
             </div>
-            <button type="button" className="btn btn-secondary">
+            <button type="button" onClick={handleSubmit} className="btn btn-secondary">
               Create
         </button>
         </form>
       </Box>
     </Container>
+    <Footer />
+    </Wrapper> 
   );
       }
 
