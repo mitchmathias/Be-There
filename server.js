@@ -21,7 +21,7 @@ if (process.env.NODE_ENV == "production") {
 }
 
 // connecnt to Mongo Db
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/eventList",
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/BeThereDB",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
