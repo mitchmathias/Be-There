@@ -34,7 +34,7 @@ return(
     <>
       <nav className="navbar">
                 <div className="navbar-Container">
-                    <div to="/home" className="navbar-logo mb-3">
+                    <div to="/home" className="navbar-logo mb-4">
                         Be-There <i className=" fas fa-leaf" />
                     </div>
                     
@@ -46,25 +46,25 @@ return(
 
                     <li className='nav-item mr-auto'>
                         <Link to="/planEvents" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
-                        <CreateEvent />}Plan an Event
+                        <CreateEvent />}<h4>Plan an Event</h4>
                     </Link>
                     </li>
                     
                     <li className='nav-item mr-auto'>
                         <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
-                        <Feed /> }Discover
+                        <Feed /> } <h4>Discover</h4>
                     </Link>
                     </li>
 
                     <li className='nav-item mr-auto'>
                         <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
-                        <MyProfile />}Profile
+                        <MyProfile />}<h4>Profile</h4>
                     </Link>
                     </li>
 
                     <li className='nav-item mr-auto'>
                         <Link to="/" className="nav-links" onClick={closeMobileMenu}>{tab === 'landing' &&
-                        <CreateEvent />}Logout
+                        <CreateEvent />}<h4>Logout</h4>
                     </Link>
                     </li>
                   
