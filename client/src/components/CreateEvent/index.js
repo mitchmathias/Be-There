@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Wrapper from '../Wrapper'
 import HomeNav from '../Navs/HomeNav'
-import { Link } from 'react-router-dom'
+import {BrowserRouter as Router, Link } from 'react-router-dom'
+import { Button } from "@material-ui/core";
 
 
 const CreateEvent = () => {
@@ -33,9 +34,7 @@ const CreateEvent = () => {
 
 
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
+  function handleSubmit() {
     axios
       .post("/api/events", {
         organization: organization,
@@ -49,29 +48,27 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-        this.setState({
-          redirectTo: "/home"
-        })}
+        }
       })
       .catch((error) => {
         console.log("submit error: ");
         console.log(error);
       });
-
-
   }
+
 
 
   return (
     <Wrapper>
       <HomeNav />
-    <Container>
-      <Box component="span" m={1} >
-        <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
-          <h1>Create Your Event</h1>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Organization Name
+      <Container>
+
+        <Box component="span" m={1} >
+          <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
+            <h1>Create Your Event</h1>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Organization Name
           </span>
               <input
                 type="text"
@@ -152,9 +149,9 @@ const CreateEvent = () => {
                 onChange={e => setImgUrl(e.target.value)}
               />
             </div>
-            <button type="button" className="btn btn-secondary" onClick={handleSubmit}>
-              Create
-        </button>
+            <Link to="/home" component={Button} className="btn btn-secondary" onClick={handleSubmit}>
+                Create
+            </Link>
           </form>
         </Box>
       </Container>
