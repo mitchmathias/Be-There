@@ -42,15 +42,11 @@ export function EventListItem({
 }) {
     const classes = useStyles();
     return (
-        <li className="list-group-item">
+        <li className="list-group-item m-2">
              <div className={classes.root}>
                 <Paper className={classes.paper}>
                     <Grid container spacing={2}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="/public/images./group-pic.jpg" />
-                            </ButtonBase>
-                        </Grid>
+                        
                         <Grid item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
