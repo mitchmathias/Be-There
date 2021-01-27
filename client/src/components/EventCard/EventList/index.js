@@ -38,7 +38,6 @@ export function EventListItem({
     title,
     body,
     organization,
-    favs,
     date,
 }) {
     const classes = useStyles();
@@ -71,9 +70,7 @@ export function EventListItem({
                                 </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item>
-                                <Typography variant="subtitle1">Favs: 4</Typography>
-                            </Grid>
+                            
                         </Grid>
                     </Grid>
                 </Paper>

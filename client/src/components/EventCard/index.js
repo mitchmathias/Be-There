@@ -31,7 +31,6 @@ class EventCard extends Component {
     };
     render() {
         return (
-            <>
                 <EventList>
                     {this.state.events.map(event => {
                         console.log(event)
@@ -47,7 +46,6 @@ class EventCard extends Component {
                         );
                     })}
                 </EventList>
-            </>
         )
     }
 }

@@ -2,15 +2,9 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import EventCard from '../../EventCard'
 
-
-
-
-
 const FakeFeed = () => {
 
     return (
-        <>
-     
             <Grid
                 container
                 direction="column"
@@ -19,7 +13,6 @@ const FakeFeed = () => {
             >
              <EventCard />   
             </Grid>
-        </>
     )
 
 }
