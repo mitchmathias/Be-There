@@ -56,7 +56,7 @@ return(
                     </li>
                     <li className='nav-item'>
                         <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
-                        <Feed />}Discover
+                        <Feed /> }Discover
                     </Link>
                     </li>
                   

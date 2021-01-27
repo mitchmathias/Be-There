@@ -26,30 +26,19 @@ const EventCard = () => {
     return (
         <>
        <button onClick={handleSubmit}>clicky</button>
-        
-           
-            {/* {events.length ? (
-                <>
-                    <h1 className="text-center">No Events Today!</h1>
-                    <p className="text-center"> Plan one today!</p>
-                </>
-            ) : (*/}
 
             <EventList>
                 {events.map(event => {
                     console.log(event)
                     return (
-                        
-              
                         <EventListItem
                             key={event.id}
                             title={event.title}
                             body={event.body}
                             organization={event.organization}
                             date={event.date}
-                            favs={"work u son of a shepard"}
+                            favs={"5"}
                         />
-                        
                     );
                 })}
             </EventList>

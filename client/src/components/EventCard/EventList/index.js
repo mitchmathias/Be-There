@@ -49,30 +49,30 @@ export function EventListItem({
                     <Grid container spacing={2}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="/public/images./sky.jpg" />
+                                <img className={classes.img} alt="complex" src="/public/images./group-pic.jpg" />
                             </ButtonBase>
                         </Grid>
                         <Grid item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
                                     <Typography gutterBottom variant="subtitle1">
-                                        Title Of event here{title}
+                                      {title}
                                  </Typography>
                                     <Typography variant="body2" gutterBottom>
-                                        {organization}Hosted by:
+                                        Hosted by:{organization}
                                 </Typography>
                                     <Typography variant="body2" color="textSecondary">
-                                       { body }description of event if needed can be taken out but
+                                       { body }
                                 </Typography>
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                     { date }and Time
+                                     { date }
                                 </Typography>
                                 </Grid>
                             </Grid>
                             <Grid item>
-                                <Typography variant="subtitle1">{favs}</Typography>
+                                <Typography variant="subtitle1">Favs: 4</Typography>
                             </Grid>
                         </Grid>
                     </Grid>
