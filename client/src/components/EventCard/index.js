@@ -39,11 +39,6 @@ const EventCard = () => {
             <div className={classes.root}>
                 <Paper className={classes.paper}>
                     <Grid container spacing={2}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="/public/images./sky.jpg" />
-                            </ButtonBase>
-                        </Grid>
                         <Grid item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
