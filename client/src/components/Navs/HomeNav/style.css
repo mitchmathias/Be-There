@@ -1,4 +1,4 @@
-.navbar {
+.navbar-home {
     height: 80px;
     background: #34626c;
     align-items: center;
@@ -41,7 +41,7 @@
   }
   
   .nav-item {
-    height: 80px;
+    height: 50px;
   }
   
   .nav-links {
@@ -53,7 +53,6 @@
     height: 100%;
     
   }
-  
   
   .fa-bars {
     color: #000000;
