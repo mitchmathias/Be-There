@@ -9,6 +9,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import axios from 'axios'
 import Footer from './components/Footer';
+import Home from './pages/home';
 
 
 class App extends Component {
@@ -71,7 +72,7 @@ class App extends Component {
             <Signup {...props} updateUser={this.updateUser} />
           } />
           
-          <Route exact path='/events' component={Feed} />
+          <Route exact path='/home' component={Home} />
           <Route exact path='/planEvents' component={CreateEvent} />
           <Route exact path='/myProfile' component={MyProfile} />
           <Route exact path='/logout' component={Login} />

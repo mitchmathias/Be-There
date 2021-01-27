@@ -8,9 +8,9 @@ import EventCard from '../../EventCard'
 
 const FakeFeed = () => {
 
-
     return (
         <>
+     
             <Grid
                 container
                 direction="column"
