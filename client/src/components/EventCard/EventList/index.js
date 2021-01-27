@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         margin: 'auto',
         maxWidth: 800,
+        background: '#bee5d3'
     },
     image: {
         width: 300,

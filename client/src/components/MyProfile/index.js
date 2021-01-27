@@ -21,7 +21,7 @@ const MyProfile = () => {
   })
 
   return (
-    <Wrapper>
+    <Wrapper className="bodywrap">
     < HomeNav />
     <Container>
       <Box>
