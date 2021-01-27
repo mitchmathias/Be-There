@@ -65,12 +65,12 @@ class Signup extends Component {
         } else {
 		return (
 			<Wrapper>
-			<video src='/videos/BLM.mp4' autoPlay loop muted />
+			 <img src='/images/group-pic.jpg' alt=''/>
 			<Welcome />
 			<LandingNav />
 				<Container>
 					<Box>
-						<div className="row d-flex justify-content-center">
+						<div className="row d-flex justify-content-center mb-3">
 							<Card style={{ alignItems: 'center' }}>
 								<div className="card-body">
 									<h1 className="card-title">Sign up</h1>
