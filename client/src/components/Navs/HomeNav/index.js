@@ -34,9 +34,9 @@ return(
     <>
       <nav className="navbar">
                 <div className="navbar-Container">
-                    <Link to="/" className="navbar-logo">
+                    <div to="/home" className="navbar-logo mb-3">
                         Be-There <i className=" fas fa-leaf" />
-                    </Link>
+                    </div>
                     
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> {/*Clicks cycle between the mobile menu X and Hamburger menu */}
@@ -44,22 +44,25 @@ return(
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
-                    <li className='nav-item'>
+                    <li className='nav-item mr-auto'>
                         <Link to="/planEvents" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
                         <CreateEvent />}Plan an Event
                     </Link>
                     </li>
-                    <li className='nav-item'>
-                        <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
-                        <MyProfile />}Profile
-                    </Link>
-                    </li>
-                    <li className='nav-item'>
+                    
+                    <li className='nav-item mr-auto'>
                         <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
                         <Feed /> }Discover
                     </Link>
                     </li>
-                    <li className='nav-item'>
+
+                    <li className='nav-item mr-auto'>
+                        <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
+                        <MyProfile />}Profile
+                    </Link>
+                    </li>
+                    
+                    <li className='nav-item mr-auto'>
                         <Link to="/" className="nav-links" onClick={closeMobileMenu}>{tab === 'landing' &&
                         <CreateEvent />}Logout
                     </Link>

@@ -50,11 +50,14 @@ const CreateEvent = () => {
         if (!response.data.errmsg) {
           console.log("successful submit");
         }
+        
       })
       .catch((error) => {
         console.log("submit error: ");
         console.log(error);
       });
+
+
   }
 
 
