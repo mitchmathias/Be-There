@@ -48,14 +48,14 @@ class Feed extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
+                    <Col size="md-4">
 
+                                    <FakeFeed />
                     </Col>
-                    <Col size="md-6 sm-12">
+                    <Col size="md-4 sm-12">
 
                             <List>
                                     {/* <ListItem filtEvents ={this.state.filtEvents}/> */}
-                                    <FakeFeed />
                             </List>
                     </Col>
                 </Row>
