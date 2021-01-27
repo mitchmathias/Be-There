@@ -61,7 +61,7 @@ return(
                         <MyProfile />}Profile
                     </Link>
                     </li>
-                    
+
                     <li className='nav-item mr-auto'>
                         <Link to="/" className="nav-links" onClick={closeMobileMenu}>{tab === 'landing' &&
                         <CreateEvent />}Logout
