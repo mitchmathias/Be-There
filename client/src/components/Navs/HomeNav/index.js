@@ -32,9 +32,9 @@ window.addEventListener('resize', showMenuButton) //adding this for mobile respo
 
 return(
     <>
-      <nav className="navbar-home">
+      <nav className="navbar-home mb-4">
                 <div className="navbar-Container">
-                    <div to="/home" className="navbar-logo mb-4  mt-3">
+                    <div to="/home" className="navbar-logo ">
                         Be-There <i className=" fas fa-leaf" />
                     </div>
                     
