@@ -4,7 +4,6 @@ import EventCard from './components/EventCard';
 import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
-import Home from './pages/home'
 import './App.css';
 import Signup from './components/Signup'
 import Login from './components/Login'

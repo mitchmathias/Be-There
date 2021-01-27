@@ -26,10 +26,10 @@ const MyProfile = () => {
     < HomeNav />
     <Container>
       <Box>
-        <div className="row d-flex justify-content-center">
+        <div className="row d-flex justify-content-center m-3">
           <Card>
             <div className="card-body">
-              <h3 className="card-title caps">{user.firstName} {user.lastName} </h3>
+              <h3 className="card-title">{user.firstName} {user.lastName} </h3>
               <p>Email address: {user.email}</p>
               <p>First name: {user.firstName}</p>
               <p>Last name: {user.lastName}</p>

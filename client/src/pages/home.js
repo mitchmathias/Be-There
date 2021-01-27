@@ -12,7 +12,6 @@ const  Home = () => {
                 <Jumbotron />
                 <HomeNav />
             </Wrapper>
-        
     )
 }
 
