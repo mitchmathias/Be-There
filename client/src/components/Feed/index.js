@@ -56,7 +56,7 @@ class Feed extends Component {
                     <Col size="md-6 sm-12">
 
                             <List>
-                                    <ListItem filtEvents ={this.state.filtEvents}/>
+                                    {/* <ListItem filtEvents ={this.state.filtEvents}/> */}
                                     <FakeFeed />
                             </List>
                     </Col>

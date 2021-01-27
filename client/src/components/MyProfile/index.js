@@ -4,8 +4,8 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Wrapper from '../Wrapper'
-import Jumbotron from '../Jumbotron';
 import HomeNav from '../Navs/HomeNav'
+
 const MyProfile = () => {
   const [user, setUser] = useState({})
   useState(() => {
@@ -22,7 +22,6 @@ const MyProfile = () => {
 
   return (
     <Wrapper>
-    <Jumbotron />
     < HomeNav />
     <Container>
       <Box>
