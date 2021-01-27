@@ -6,10 +6,11 @@ function Mailer(){
     let transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
-        ssl: false,
-        use_authentication: true,
+        secure: false,
+        auth: {
         user: 'betherecommunity@gmail.com',
         pass: process.env.SMTP_PASS
+        }
     });
 
     const message = {
