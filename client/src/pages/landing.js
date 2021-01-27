@@ -1,16 +1,17 @@
 import React from 'react';
-import Hero from '../components/Hero'
 import Welcome from '../components/Welcome';
 import LandingNav from '../components/Navs/LandingNav'
+import Wrapper from '../components/Wrapper';
 
 
 const Landing = () => {
 
     return (
-        <>
-            <Hero />
-           
-        </>
+        <Wrapper>
+        <img src='/images/group-pic.jpg' alt=''/>
+        <Welcome />
+        <LandingNav />
+        </Wrapper>
     )
 }
 

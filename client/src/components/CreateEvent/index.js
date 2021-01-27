@@ -4,10 +4,8 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Jumbotron from '../Jumbotron'
-import HomeNav from '../Navs/HomeNav'
 import Wrapper from '../Wrapper'
-
+import HomeNav from '../Navs/HomeNav'
 
 
 
@@ -18,7 +16,7 @@ const CreateEvent = () => {
   const [location, setLocation] = useState("")
   const [date, setDate] = useState("2017-05-24")
   const [description, setDescription] = useState("")
-  const [imgUrl, setImgUrl] = useState("")
+  const [imgUrl, setImgUrl] = useState("") //got back to this to see if i can upload imgs keep as placeholder right now
 
   const useStyles = makeStyles((theme) => ({
     container: {
@@ -44,7 +42,8 @@ const CreateEvent = () => {
         title: eventName,
         photoUrl: imgUrl,
         location: location,
-        body: description
+        body: description,
+        date: date
       })
       .then((response) => {
         console.log(response);
@@ -61,8 +60,7 @@ const CreateEvent = () => {
 
   return (
     <Wrapper>
-    <Jumbotron />
-    < HomeNav />
+      <HomeNav />
     <Container>
 
       <Box component="span" m={1} >
@@ -112,10 +110,10 @@ const CreateEvent = () => {
               onChange={e => setLocation(e.target.value)}
             />
           </div>
-          <div>
+          <div className="mb-3">
               <TextField
                 id="date"
-                label="Birthday"
+                label="Date"
                 type="date"
                 
                 value={date}
@@ -129,13 +127,13 @@ const CreateEvent = () => {
         </div>
             <div className="input-group mb-3">
               <span className="input-group-text">Description</span>
-              <textarea
+              <input
                 className="form-control"
-                placeholder="ie: time of the event"
+                placeholder="What are we doing!"
                 aria-label="Description"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
-              ></textarea>
+              />
             </div>
             <div className="input-group mb-3">
               <span className="input-group-text" id="addon-wrapping">

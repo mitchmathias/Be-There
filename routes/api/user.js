@@ -16,7 +16,9 @@ router.post(
     (req, res) => {
         console.log('logged in', req.user);
         var userInfo = {
-            username: req.user.username
+            username: req.user.username,
+            id: req.user.id,
+            token: req.user.token
         };
         res.send(userInfo);
     }
@@ -25,8 +27,7 @@ router.post(
 router.get(
     '/logout',
     function(req,res){
-        req.logout();
-        res.redirect('/');
+        req.logout()
     }
 )
 

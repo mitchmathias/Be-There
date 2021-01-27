@@ -53,9 +53,9 @@ class Login extends Component {
                 if (response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        username: response.data.username,
                     })
-                    console.log("weMadeIT")
+                    console.log("We Made It!")
                     this.setState({
                         redirectTo: '/events'
                     })
@@ -79,12 +79,12 @@ class Login extends Component {
         } else {
             return (
                 <Wrapper>
-                    <video src='/videos/BLM.mp4' autoPlay loop muted />
+                    <img src='/images/group-pic.jpg' alt=''/>
                     <Welcome />
                     <LandingNav />
                     <Container>
                         <Box>
-                            <div className="row d-flex justify-content-center">
+                            <div className="row d-flex justify-content-center mb-3">
                                 <Card>
                                     <div className="card-body">
                                         <h1 className="card-title">Login</h1>
@@ -125,6 +125,7 @@ class Login extends Component {
                                                         className="btn btn-primary  col-mr-auto col-mb-auto"
                                                         onClick={this.onSubmit}
                                                         variant='success'
+                                                        color="primary"
                                                         type="submit"><h5>Login</h5>
                                                     </button>
                                                 </div>

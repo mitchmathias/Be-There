@@ -1,8 +1,11 @@
-.white {
-    font-weight: 200px !important;
-    color: white;
-}
 
-.jumbotron{
+h1, h2 {
+    font-weight: 700 !important;
+}
+.welcome{
     background-color: transparent !important;
+    backdrop-filter: blur(1.5px) ;
+    margin-bottom: 0 !important;
+    font-weight: 800  !important;
+    color: black;
 }
