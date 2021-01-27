@@ -9,7 +9,7 @@ const LandingNav = () => {
     return (
         <Container>
             <Box component="span" m={1}>
-                <div className="row d-flex justify-content-center">
+                <div className="row d-flex justify-content-center navbox">
                     <Card>
                             <div className="card-body">
                                 <nav className="navbar navbar-expand">

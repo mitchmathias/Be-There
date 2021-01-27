@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 mongoose.connect(
-    process.envMONGODB_URI ||
+    process.env.MONGODB_URI ||
     "mongodb://localhost/eventlist"
 );
 
@@ -11,7 +11,9 @@ const eventSeed = [
         title: "Generic Clean Up",
         photoUrl: "BB&T",
         body:"We are cleaning up the streets ",
-        favs: 6,
+        meta:{
+            favs: 6,
+        },
         date: new Date(Date.now())
     },
     {
