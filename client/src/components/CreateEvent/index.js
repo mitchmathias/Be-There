@@ -61,61 +61,61 @@ const CreateEvent = () => {
   return (
     <Wrapper>
       <HomeNav />
-    <Container>
+      <Container>
 
-      <Box component="span" m={1} >
-        <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
-          <h1>Create Your Event</h1>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Organization Name
+        <Box component="span" m={1} >
+          <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
+            <h1>Create Your Event</h1>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Organization Name
           </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Organization"
-              aria-label="Organization"
-              aria-describedby="basic-addon1"
-              value={organization}
-              onChange={e => setOrganization(e.target.value)}
-            />
-          </div>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Organization"
+                aria-label="Organization"
+                aria-describedby="basic-addon1"
+                value={organization}
+                onChange={e => setOrganization(e.target.value)}
+              />
+            </div>
 
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Event Name
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Event Name
           </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Event"
-              aria-label="Event"
-              aria-describedby="basic-addon1"
-              value={eventName}
-              onChange={e => setEventName(e.target.value)}
-            />
-          </div>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Event"
+                aria-label="Event"
+                aria-describedby="basic-addon1"
+                value={eventName}
+                onChange={e => setEventName(e.target.value)}
+              />
+            </div>
 
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Event Location
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Event Location
           </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Location"
-              aria-label="Location"
-              aria-describedby="basic-addon1"
-              value={location}
-              onChange={e => setLocation(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Location"
+                aria-label="Location"
+                aria-describedby="basic-addon1"
+                value={location}
+                onChange={e => setLocation(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
               <TextField
                 id="date"
                 label="Date"
                 type="date"
-                
+
                 value={date}
                 onChange={e => setDate(e.target.value)}
                 className={useStyles.textField}
@@ -123,8 +123,8 @@ const CreateEvent = () => {
                   shrink: true,
                 }}
               />
-      
-        </div>
+
+            </div>
             <div className="input-group mb-3">
               <span className="input-group-text">Description</span>
               <input
@@ -152,11 +152,11 @@ const CreateEvent = () => {
             <button type="button" className="btn btn-secondary" onClick={handleSubmit}>
               Create
         </button>
-        </form>
-      </Box>
-    </Container>
-    </Wrapper> 
+          </form>
+        </Box>
+      </Container>
+    </Wrapper>
   );
-      }
+}
 
 export default CreateEvent;
