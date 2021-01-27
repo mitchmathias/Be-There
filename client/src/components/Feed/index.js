@@ -50,10 +50,7 @@ class Feed extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
-
-                    </Col>
-                    <Col size="md-6 sm-12">
+                    <Col>
 
                             <List>
                                     <ListItem filtEvents ={this.state.filtEvents}/>

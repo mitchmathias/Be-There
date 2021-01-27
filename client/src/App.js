@@ -9,7 +9,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import axios from 'axios'
 import Footer from './components/Footer';
-
+import Home from './pages/home'
 
 class App extends Component {
 
