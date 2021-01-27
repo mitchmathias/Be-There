@@ -1,8 +1,22 @@
 const nodemailer = require('nodemailer');
 
-function Mailer(){
-    const userEmail = this.state.email
-    console.log(process.env.SMTP_PASS)
+function Mailer(username, password, done){
+		User.findOne({ username: username }, (err, user) => {
+			console.log(username, user, err)
+			if (err) {
+				return done(err)
+			}
+			if (!user) {
+				console.log('not found')
+				return done(null, false, { message: 'Incorrect username' })
+			}
+			if (!user.checkPassword(password)) {
+				return done(null, false, { message: 'Incorrect password' })
+			}
+			return done(null, user)
+		})
+
+    const userEmail = user.email
     let transport = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
