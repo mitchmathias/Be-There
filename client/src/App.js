@@ -70,7 +70,7 @@ class App extends Component {
           <Route path='/signup' render={(props) =>
             <Signup {...props} updateUser={this.updateUser} />
           } />
-          <Route exact path="/home" component={Home} />
+          
           <Route exact path='/events' component={Feed} />
           <Route exact path='/planEvents' component={CreateEvent} />
           <Route exact path='/myProfile' component={MyProfile} />

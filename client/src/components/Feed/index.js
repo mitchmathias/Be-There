@@ -3,8 +3,6 @@ import { Col, Row, Container } from "../Grid";
 import API from '../../utils/API'
 import '../../style.css'
 import { List, ListItem } from "../List";
-import EventCard from '../EventCard';
-import FakeFeed from './FakeFeed';
 
 class Feed extends Component {
 
@@ -50,11 +48,13 @@ class Feed extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col>
+                    <Col size="md-6">
+
+                    </Col>
+                    <Col size="md-6 sm-12">
 
                             <List>
                                     <ListItem filtEvents ={this.state.filtEvents}/>
-                                    <FakeFeed />
                             </List>
                     </Col>
                 </Row>
