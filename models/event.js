@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
     title: { type: String, required: true },
-    photoUrl: {type: String},
+    organization: {type: String},
     date: { type: Date, default: Date.now, required: true },
     body: {type: String},
     meta: {
