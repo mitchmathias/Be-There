@@ -2,7 +2,6 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Wrapper from '../components/Wrapper';
 import HomeNav from '../components/Navs/HomeNav';
-
 import Feed from '../components/Feed';
 
 const  Home = () => {
@@ -12,9 +11,9 @@ const  Home = () => {
             <Wrapper>
                 <HomeNav />
                 <Feed />
-                <Footer />
+                {/* <Footer /> */}
             </Wrapper>
     )
 }
 
-export default Home
+export default Home;

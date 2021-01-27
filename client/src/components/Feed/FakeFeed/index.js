@@ -8,9 +8,9 @@ import EventCard from '../../EventCard'
 
 const FakeFeed = () => {
 
-
     return (
         <>
+     
             <Grid
                 container
                 direction="column"
@@ -18,12 +18,6 @@ const FakeFeed = () => {
                 alignItems="center"
             >
              <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             
             </Grid>
         </>
     )

@@ -34,15 +34,12 @@ return(
     <>
       <nav className="navbar">
                 <div className="navbar-Container">
-                    <Link to="/" className="navbar-logo">
+                    <Link to="/home" className="navbar-logo">
                         Be-There <i className=" fas fa-leaf" />
                     </Link>
                     
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> {/*Clicks cycle between the mobile menu X and Hamburger menu */}
-                    </div>
-                    <div className="nav-item">
-                        <Link to='/' exact className="nav-link active nav-link"><h5>Logout</h5> </Link>
                     </div>
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
@@ -53,13 +50,18 @@ return(
                     </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
+                        <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
                         <MyProfile />}Profile
                     </Link>
                     </li>
                     <li className='nav-item'>
                         <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
                         <Feed /> }Discover
+                    </Link>
+                    </li>
+                    <li className='nav-item'>
+                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>{tab === 'landing' &&
+                        <CreateEvent />}Logout
                     </Link>
                     </li>
                   
