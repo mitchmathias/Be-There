@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
+import nodemailer from 'nodemailer'
 
 class Signup extends Component {
 	constructor() {
@@ -44,6 +45,7 @@ class Signup extends Component {
 		})
 			.then(response => {
 				console.log(response)
+				sendEmail()
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({
@@ -57,6 +59,31 @@ class Signup extends Component {
 				console.log(error)
 
 			})
+	}
+
+	sendEmail(){
+		let transport = nodemailer.createTransport({
+			host: 'smtp.gmail.com',
+			port: 465,
+			auth: {
+			   user: 'BeThereCommunity@gmail.com',
+			   pass: 'Be-There'
+			}
+		});
+		const userEmail = this.state.email;
+		const message = {
+			from: 'BeThereCommunity@gmail.com', // Sender address
+			to: userEmail,         // List of recipients
+			subject: 'Welcome to Be-There', // Subject line
+			text: "Welcome to Be-There!! We are so happy to have you as part of our community. We just wanted to contact you to confirm your email. From now on we will contact you with any updates on events that you have signed up for. Please feel free to contact us with any questions! "  // Plain text body
+		};
+		transport.sendMail(message, function(err, info) {
+			if (err) {
+			  console.log(err)
+			} else {
+			  console.log(info);
+			}
+		});
 	}
 
 	render() {
