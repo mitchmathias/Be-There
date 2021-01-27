@@ -50,7 +50,7 @@ return(
                     </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/profile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
+                        <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
                         <MyProfile />}Profile
                     </Link>
                     </li>

@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../Grid";
 import API from '../../utils/API'
 import '../../style.css'
 import { List, ListItem } from "../List";
-
+import FakeFeed from './FakeFeed'
 class Feed extends Component {
 
     state = {
@@ -54,7 +54,8 @@ class Feed extends Component {
                     <Col size="md-6 sm-12">
 
                             <List>
-                                    <ListItem filtEvents ={this.state.filtEvents}/>
+                                    {/* <ListItem filtEvents ={this.state.filtEvents}/> */}
+                                    <FakeFeed />
                             </List>
                     </Col>
                 </Row>
