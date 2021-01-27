@@ -32,7 +32,7 @@ window.addEventListener('resize', showMenuButton) //adding this for mobile respo
 
 return(
     <>
-      <nav className="navbar">
+      <nav className="navbar mb-4">
                 <div className="navbar-container">
                     <div to="/home" className="navbar-logo ">
                         Be-There <i className=" fas fa-leaf" />
@@ -44,25 +44,25 @@ return(
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
-                    <li className='nav-item'>
+                    <li className='nav-item mt-3'>
                         <Link to="/planEvents" className="nav-links" onClick={closeMobileMenu}>{tab === 'planEvents' &&
                         <CreateEvent />}<h4>Plan an Event</h4>
                     </Link>
                     </li>
                     
-                    <li className='nav-item'>
+                    <li className='nav-item  mt-3'>
                         <Link to="/home" className="nav-links" onClick={closeMobileMenu}>{tab === 'feed' &&
                         <Feed /> } <h4>Discover</h4>
                     </Link>
                     </li>
 
-                    <li className='nav-item'>
+                    <li className='nav-item  mt-3'>
                         <Link to="/myProfile" className="nav-links" onClick={closeMobileMenu}>{tab === 'profile' &&
                         <MyProfile />}<h4>Profile</h4>
                     </Link>
                     </li>
 
-                    <li className='nav-item'>
+                    <li className='nav-item  mt-3'>
                         <Link to="/" className="nav-links" onClick={closeMobileMenu}>{tab === 'landing' &&
                         <CreateEvent />}<h4>Logout</h4>
                     </Link>
