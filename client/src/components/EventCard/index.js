@@ -41,7 +41,7 @@ class EventCard extends Component {
                                 body={event.body}
                                 organization={event.organization}
                                 date={event.date}
-                                favs={"5"}
+                                
                             />
                         );
                     })}
