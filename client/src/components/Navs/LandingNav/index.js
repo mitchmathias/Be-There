@@ -12,7 +12,7 @@ const LandingNav = () => {
                 <div className="row d-flex justify-content-center navbox">
                     <Card>
                             <div className="card-body">
-                                <nav className="navbar navbar-expand">
+                                <nav className="navbar-home navbar-expand">
                                     <div className="navbar-nav mr-auto">
                                         <div className="navbar-nav col-mr-auto">
                                             <div className="nav-item">
