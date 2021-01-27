@@ -6,7 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Wrapper from '../Wrapper'
 import HomeNav from '../Navs/HomeNav'
-import { Link } from 'react-router-dom'
+import {BrowserRouter as Router, Link } from 'react-router-dom'
+import { Button } from "@material-ui/core";
 
 
 const CreateEvent = () => {
@@ -33,9 +34,7 @@ const CreateEvent = () => {
 
 
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
+  function handleSubmit() {
     axios
       .post("/api/events", {
         organization: organization,
@@ -49,9 +48,7 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-        this.setState({
-          redirectTo: "/home"
-        })}
+        }
       })
       .catch((error) => {
         console.log("submit error: ");
@@ -60,63 +57,65 @@ const CreateEvent = () => {
   }
 
 
+
   return (
     <Wrapper>
       <HomeNav />
-    <Container>
-      <Box component="span" m={1} >
-        <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
-          <h1>Create Your Event</h1>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Organization Name
-          </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Organization"
-              aria-label="Organization"
-              aria-describedby="basic-addon1"
-              value={organization}
-              onChange={e => setOrganization(e.target.value)}
-            />
-          </div>
+      <Container>
 
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Event Name
+        <Box component="span" m={1} >
+          <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
+            <h1>Create Your Event</h1>
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Organization Name
           </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Event"
-              aria-label="Event"
-              aria-describedby="basic-addon1"
-              value={eventName}
-              onChange={e => setEventName(e.target.value)}
-            />
-          </div>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Organization"
+                aria-label="Organization"
+                aria-describedby="basic-addon1"
+                value={organization}
+                onChange={e => setOrganization(e.target.value)}
+              />
+            </div>
 
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">
-              Event Location
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Event Name
           </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Location"
-              aria-label="Location"
-              aria-describedby="basic-addon1"
-              value={location}
-              onChange={e => setLocation(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Event"
+                aria-label="Event"
+                aria-describedby="basic-addon1"
+                value={eventName}
+                onChange={e => setEventName(e.target.value)}
+              />
+            </div>
+
+            <div className="input-group mb-3">
+              <span className="input-group-text" id="basic-addon1">
+                Event Location
+          </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Location"
+                aria-label="Location"
+                aria-describedby="basic-addon1"
+                value={location}
+                onChange={e => setLocation(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
               <TextField
                 id="date"
                 label="Date"
                 type="date"
-                
+
                 value={date}
                 onChange={e => setDate(e.target.value)}
                 className={useStyles.textField}
@@ -124,8 +123,8 @@ const CreateEvent = () => {
                   shrink: true,
                 }}
               />
-      
-        </div>
+
+            </div>
             <div className="input-group mb-3">
               <span className="input-group-text">Description</span>
               <input
@@ -150,14 +149,14 @@ const CreateEvent = () => {
                 onChange={e => setImgUrl(e.target.value)}
               />
             </div>
-            <button type="button" className="btn btn-secondary" onClick={handleSubmit}>
-              Create
-        </button>
-        </form>
-      </Box>
-    </Container>
-    </Wrapper> 
+            <Link to="/home" component={Button} className="btn btn-secondary" onClick={handleSubmit}>
+                Create
+            </Link>
+          </form>
+        </Box>
+      </Container>
+    </Wrapper>
   );
-      }
+}
 
 export default CreateEvent;

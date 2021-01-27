@@ -1,6 +1,4 @@
-
-    
-    .navbar {
+.navbar {
     height: 80px;
     background: #34626c;
     align-items: center;
@@ -11,7 +9,6 @@
     position: sticky;
     z-index: 999;
   }
-  
   .navbar-container {
     display: flex;
     justify-content: center;
@@ -40,7 +37,7 @@
     text-align: center;
     width: 60vw;
     justify-content: end;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
   }
   
   .nav-item {

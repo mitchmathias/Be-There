@@ -47,7 +47,7 @@ class Signup extends Component {
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({
-						redirectTo: '/'
+						redirectTo: '/home'
 					})
 				} else {
 					console.log('username already taken')
