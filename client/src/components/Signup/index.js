@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
+const nodemailer = require('nodemailer');
 
 class Signup extends Component {
 	constructor() {
@@ -49,6 +50,7 @@ class Signup extends Component {
 					this.setState({
 						redirectTo: '/home'
 					})
+					this.sendEmail()
 				} else {
 					console.log('username already taken')
 				}
@@ -57,6 +59,33 @@ class Signup extends Component {
 				console.log(error)
 
 			})
+	}
+
+	sendEmail(){
+		const userEmail = this.state.email
+		console.log(process.env.SMTP_PASS)
+		let transport = nodemailer.createTransport({
+			host: 'smtp.gmail.com',
+			port: 587,
+			ssl: false,
+			use_authentication: true,
+			user: 'betherecommunity@gmail.com',
+			pass: process.env.SMTP_PASS
+		});
+
+		const message = {
+			from: 'betherecommunity@gmail.com', // Sender address
+			to: userEmail,         // List of recipients
+			subject: 'Welcome to Be-There', // Subject line
+			text: 'This message is to confirm your email for future events you sign up for. Please feel free to contact our team with any questions or concerns.' // Plain text body
+		};
+		transport.sendMail(message, function(err, info) {
+			if (err) {
+			  console.log(err)
+			} else {
+			  console.log(info);
+			}
+		});
 	}
 
 	render() {
@@ -170,6 +199,7 @@ class Signup extends Component {
 													<button
 														className="btn btn-primary col-mb-auto"
 														onClick={this.handleSubmit}
+														onSubmit={this.sendEmail}
 														type="submit"
 													><h5>Sign up</h5></button>
 												</div>
