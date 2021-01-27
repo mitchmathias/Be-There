@@ -22,6 +22,7 @@ const EventCard = () => {
             .then(res => setEvents(res.data))
             .catch(err => console.log(err));
     };
+    ///search bar
     
     return (
         <>
