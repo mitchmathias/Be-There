@@ -18,12 +18,6 @@ const FakeFeed = () => {
                 alignItems="center"
             >
              <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             <EventCard />   
-             
             </Grid>
         </>
     )

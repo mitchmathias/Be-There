@@ -34,7 +34,7 @@ return(
     <>
       <nav className="navbar">
                 <div className="navbar-Container">
-                    <Link to="/" className="navbar-logo">
+                    <Link to="/home" className="navbar-logo">
                         Be-There <i className=" fas fa-leaf" />
                     </Link>
                     

@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Wrapper from '../Wrapper'
 import HomeNav from '../Navs/HomeNav'
-
+import { Link } from 'react-router-dom'
 
 
 const CreateEvent = () => {
@@ -49,7 +49,9 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-        }
+        this.setState({
+          redirectTo: "/home"
+        })}
       })
       .catch((error) => {
         console.log("submit error: ");
@@ -62,7 +64,6 @@ const CreateEvent = () => {
     <Wrapper>
       <HomeNav />
     <Container>
-
       <Box component="span" m={1} >
         <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
           <h1>Create Your Event</h1>
