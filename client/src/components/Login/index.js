@@ -53,9 +53,9 @@ class Login extends Component {
                 if (response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        username: response.data.username,
                     })
-                    console.log("weMadeIT")
+                    console.log("We Made It!")
                     this.setState({
                         redirectTo: '/events'
                     })

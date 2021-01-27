@@ -4,8 +4,9 @@ import './style.css';
 import Typography from '@material-ui/core/Typography';
 
 const HomeNav = () => {
+
     return (
-        
+
             <Typography component={'span'} className="navbar sticky-top navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav mr-auto">
                     <div className="nav-item">
@@ -21,7 +22,7 @@ const HomeNav = () => {
                         <NavLink to='/myProfile' exact className="nav-link active nav-link"><h5>My Profile</h5> </NavLink>
                     </div>
                     <div className="nav-item">
-                        <NavLink to='/logout' exact className="nav-link active nav-link"><h5>Logout</h5> </NavLink>
+                        <NavLink to='/' exact className="nav-link active nav-link"><h5>Logout</h5> </NavLink>
                     </div>
                 </div>
             </Typography>
