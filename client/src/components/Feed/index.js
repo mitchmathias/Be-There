@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Col, Row, Container } from "../Grid";
 import API from '../../utils/API'
-import '../../style.css'
 import { List, ListItem } from "../List";
 import FakeFeed from './FakeFeed'
+
 class Feed extends Component {
 
     state = {
@@ -47,14 +47,9 @@ class Feed extends Component {
     render() {
         return (
             <Container fluid>
-                <Row>
-                    <Col size="md-4">
+                <Row style={{"justify-content": "center"}}>
+                    <Col size="" >
                         <FakeFeed />
-                    </Col>
-                    <Col size="md-4 sm-12">
-                        <List>
-                            {/* <ListItem filtEvents ={this.state.filtEvents}/> */}
-                        </List>
                     </Col>
                 </Row>
             </Container>
