@@ -15,7 +15,7 @@ const CreateEvent = () => {
   const [organization, setOrganization] = useState("")
   const [eventName, setEventName] = useState("")
   const [location, setLocation] = useState("")
-  const [date, setDate] = useState("2017-05-24")
+  const [date, setDate] = useState("2021-01-28")
   const [description, setDescription] = useState("")
   const [imgUrl, setImgUrl] = useState("") //got back to this to see if i can upload imgs keep as placeholder right now
 
@@ -115,7 +115,6 @@ const CreateEvent = () => {
                 id="date"
                 label="Date"
                 type="date"
-
                 value={date}
                 onChange={e => setDate(e.target.value)}
                 className={useStyles.textField}

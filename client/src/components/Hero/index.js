@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import LandingNav from "../Navs/LandingNav/index"
 import './style.css';
+
 function Hero() {
   return (
     <div className='hero-container'>
