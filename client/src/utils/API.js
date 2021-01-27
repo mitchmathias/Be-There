@@ -3,6 +3,6 @@ import axios from 'axios';
 
 export default {
   getEvents: function () {
-    return axios.get("/models/events");
+    return axios.get("/api/events");
   }
 };

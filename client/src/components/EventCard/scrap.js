@@ -32,9 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 
 const EventCard = () => {
-
-
-
     const classes = useStyles();
     return (
         <div>
@@ -50,7 +47,7 @@ const EventCard = () => {
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
                                     <Typography gutterBottom variant="subtitle1">
-                                        Title Of event here{this.state.title}
+                                        Title Of event here
                                  </Typography>
                                     <Typography variant="body2" gutterBottom>
                                         {/* {this.state.body} */}Hosted by:

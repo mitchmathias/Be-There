@@ -23,7 +23,7 @@ const FakeFeed = () => {
              <EventCard />   
              <EventCard />   
              <EventCard />   
-             <EventCard />   
+             
             </Grid>
         </>
     )

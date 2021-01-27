@@ -30,15 +30,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 export function EventList ({children}){
-return 
-    <ul className="list-group">{children}</ul>;
-}
+return (
+    <ul className="list-group">{children}</ul>
+)}
 //above creates a list for each li which will be the event cards displayed down feed
 export function EventListItem({
     title,
     body,
     organization,
-    location,
+    favs,
     date,
 }) {
     const classes = useStyles();
@@ -56,23 +56,23 @@ export function EventListItem({
                             <Grid item xs container direction="column" spacing={2}>
                                 <Grid item xs>
                                     <Typography gutterBottom variant="subtitle1">
-                                        Title Of event here{this.state.title}
+                                        Title Of event here{title}
                                  </Typography>
                                     <Typography variant="body2" gutterBottom>
-                                        {/* {this.state.body} */}Hosted by:
+                                        {organization}Hosted by:
                                 </Typography>
                                     <Typography variant="body2" color="textSecondary">
-                                        body  description of event if needed can be taken out but
+                                       { body }description of event if needed can be taken out but
                                 </Typography>
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="body2" style={{ cursor: 'pointer' }}>
-                                      Date and Time
+                                     { date }and Time
                                 </Typography>
                                 </Grid>
                             </Grid>
                             <Grid item>
-                                <Typography variant="subtitle1">69.96</Typography>
+                                <Typography variant="subtitle1">{favs}</Typography>
                             </Grid>
                         </Grid>
                     </Grid>

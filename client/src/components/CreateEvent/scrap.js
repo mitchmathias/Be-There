@@ -67,7 +67,6 @@ const CreateEvent = () => {
   return (
     <Wrapper>
     <Container>
-
       <Box component="span" m={1} >
         <form className={useStyles.container} noValidate onSubmit={handleSubmit}>
           <h1>Create Your Event</h1>
