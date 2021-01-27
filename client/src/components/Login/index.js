@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import LandingNav from '../Navs/LandingNav'
-import Footer from '../Footer'
+
 import Wrapper from '../Wrapper'
 
 class Login extends Component {
@@ -53,9 +53,9 @@ class Login extends Component {
                 if (response.status === 200) {
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        username: response.data.username,
                     })
-                    console.log("weMadeIT")
+                    console.log("We Made It!")
                     this.setState({
                         redirectTo: '/events'
                     })
@@ -79,12 +79,12 @@ class Login extends Component {
         } else {
             return (
                 <Wrapper>
-                    <img src='/images/group-pic.jpg' alt="group"/>
+                    <img src='/images/group-pic.jpg' alt=''/>
                     <Welcome />
                     <LandingNav />
                     <Container>
                         <Box>
-                            <div className="row d-flex justify-content-center">
+                            <div className="row d-flex justify-content-center mb-3">
                                 <Card>
                                     <div className="card-body">
                                         <h1 className="card-title">Login</h1>
@@ -136,7 +136,6 @@ class Login extends Component {
                             </div>
                         </Box>
                     </Container>
-                    <Footer />
                 </Wrapper>)
         }
     }

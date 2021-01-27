@@ -11,11 +11,10 @@ h5{
 }
 
 .card-body{
-    background-color: blue;
-    /* background: transparent; */
+    background-color: transparent !important;
 }
 .navbox{
-    background-color: blue;
+    background-color: #000000;
     color:aliceblue
 }
 .h4{

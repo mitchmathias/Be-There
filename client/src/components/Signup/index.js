@@ -6,7 +6,6 @@ import LandingNav from '../Navs/LandingNav';
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
-import Footer from '../Footer';
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
 
@@ -65,14 +64,13 @@ class Signup extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
 		return (
-			<div>
-				<Wrapper>
-				<img src='/images/treeHands.jpg' alt="dirty hands"/>
-				<Welcome />
-				<LandingNav />
+			<Wrapper>
+			 <img src='/images/group-pic.jpg' alt=''/>
+			<Welcome />
+			<LandingNav />
 				<Container>
 					<Box>
-						<div className="row d-flex justify-content-center">
+						<div className="row d-flex justify-content-center mb-3">
 							<Card style={{ alignItems: 'center' }}>
 								<div className="card-body">
 									<h1 className="card-title">Sign up</h1>
@@ -183,9 +181,7 @@ class Signup extends Component {
 						</div>
 					</Box>
 				</Container>
-				<Footer />
-				</Wrapper>
-			</div>
+			</Wrapper>
 		)
 	}
 }

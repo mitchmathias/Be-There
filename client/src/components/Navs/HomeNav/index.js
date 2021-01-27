@@ -41,6 +41,9 @@ return(
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'} /> {/*Clicks cycle between the mobile menu X and Hamburger menu */}
                     </div>
+                    <div className="nav-item">
+                        <Link to='/' exact className="nav-link active nav-link"><h5>Logout</h5> </Link>
+                    </div>
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 

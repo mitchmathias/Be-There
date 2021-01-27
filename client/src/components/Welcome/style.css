@@ -1,8 +1,11 @@
-h3 {
-    font-weight: normal !important;
-}
 
-div {
+h1, h2 {
+    font-weight: 700 !important;
+}
+.welcome{
     background-color: transparent !important;
-    background: transparent;
+    backdrop-filter: blur(1.5px) ;
+    margin-bottom: 0 !important;
+    font-weight: 800  !important;
+    color: black;
 }

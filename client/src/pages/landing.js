@@ -1,16 +1,17 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero'
-
+import Welcome from '../components/Welcome';
+import LandingNav from '../components/Navs/LandingNav'
+import Wrapper from '../components/Wrapper';
 
 
 const Landing = () => {
 
     return (
-        <div>
-            <Hero />
-            <Footer />
-        </div>
+        <Wrapper>
+        <img src='/images/group-pic.jpg' alt=''/>
+        <Welcome />
+        <LandingNav />
+        </Wrapper>
     )
 }
 

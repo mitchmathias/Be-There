@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Footer from '../Footer'
 import Wrapper from '../Wrapper'
 import HomeNav from '../Navs/HomeNav'
 
@@ -31,13 +30,10 @@ const CreateEvent = () => {
     },
   }));
 
-  // const classes = useStyles();
-
 
 
 
   function handleSubmit(event) {
-    // console.log(this.state.username);
     event.preventDefault();
 
     axios
@@ -53,9 +49,6 @@ const CreateEvent = () => {
         console.log(response);
         if (!response.data.errmsg) {
           console.log("successful submit");
-          // this.setState({
-          //   redirectTo: "/events"
-          // });
         }
       })
       .catch((error) => {
@@ -117,10 +110,10 @@ const CreateEvent = () => {
               onChange={e => setLocation(e.target.value)}
             />
           </div>
-          <div>
+          <div className="mb-3">
               <TextField
                 id="date"
-                label="Pick a Date"
+                label="Date"
                 type="date"
                 
                 value={date}
@@ -134,12 +127,13 @@ const CreateEvent = () => {
         </div>
             <div className="input-group mb-3">
               <span className="input-group-text">Description</span>
-              <textarea
+              <input
                 className="form-control"
+                placeholder="What are we doing!"
                 aria-label="Description"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
-              ></textarea>
+              />
             </div>
             <div className="input-group mb-3">
               <span className="input-group-text" id="addon-wrapping">
@@ -155,13 +149,12 @@ const CreateEvent = () => {
                 onChange={e => setImgUrl(e.target.value)}
               />
             </div>
-            <button type="button" onClick={handleSubmit} className="btn btn-secondary">
+            <button type="button" className="btn btn-secondary" onClick={handleSubmit}>
               Create
         </button>
         </form>
       </Box>
     </Container>
-    <Footer />
     </Wrapper> 
   );
       }
