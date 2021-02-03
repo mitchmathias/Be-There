@@ -31,7 +31,7 @@ Beginning with login/signup users provide protected information which is solely 
 ### Deployed: 
 [Heroku](https://be-there-project.herokuapp.com/)
 
-![image](././)
+![image](./client/public/videos/Be-There.gif)
 
 
 
