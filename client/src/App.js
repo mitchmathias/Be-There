@@ -5,8 +5,8 @@ import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
 import './App.css';
-import Signup from './components/Signup'
-import Login from './components/Login'
+import SignUpForm from './components/LandingContext/Signup/'
+import Login from './components/LandingContext/Login'
 import axios from 'axios'
 import Footer from './components/Footer';
 import Home from './pages/home';
@@ -69,7 +69,7 @@ class App extends Component {
             <Login {...props} updateUser={this.updateUser} />
           } />
           <Route path='/signup' render={(props) =>
-            <Signup {...props} updateUser={this.updateUser} />
+            <SignUpForm {...props} updateUser={this.updateUser} />
           } />
           
           <Route exact path='/home' component={Home} />
