@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
-import LandingNav from '../../Navs/LandingNav';
-import Container from '@material-ui/core/Container'
-import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
-import Wrapper from '../../Wrapper'
 import { CardContent } from '@material-ui/core';
 import Organizations from './Organizations';
 import Volunteers from './Volunteers';

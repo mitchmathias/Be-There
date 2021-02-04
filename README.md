@@ -29,13 +29,13 @@ Beginning with login/signup users provide protected information which is solely 
 ### Licenses: 
 ![license](https://img.shields.io/badge/license-mit-green)
 ### Deployed: 
-[heroku](https://be-there-project.herokuapp.com/)
+[Heroku](https://be-there-project.herokuapp.com/)
 
-![image](/client/public/videos/Be-There.gif)
+![image](./client/public/videos/Be-There.gif)
+
+
 
 ### Contact:
-
-
 
 ### Contributors: 
 Mitch Mathias
