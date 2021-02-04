@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import OrgTeamDetails from './OrgTeamDetails';
 import { Redirect } from 'react-router-dom'
 import OrgUserDetails from "./OrgUserDetails";
-import ConfirmOrg from "./Confirm"
-import SuccessOrg from './Success'
+// import ConfirmOrg from "./Confirm"
+// import SuccessOrg from './Success'
 import axios from 'axios';
 
 
@@ -20,11 +20,12 @@ export class OrgForm extends Component {
             orgPassword: '',
             orgConfirmPassword: '',
             orgCity: '',
+            orgTeam: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    //next step
+
 
     nextStep = () => {
         const { step } = this.state;
@@ -58,6 +59,7 @@ export class OrgForm extends Component {
             orgUserName: this.state.orgUserName,
             orgPassword: this.state.orgPassword,
             orgConfirmPassword: this.state.orgConfirmPassword,
+            orgTeam: this.state.orgTeam
         })
             .then(response => {
                 console.log(response)
@@ -105,18 +107,18 @@ export class OrgForm extends Component {
                             values={values}
                         />
                     )
-                case 3:
-                    return (
-                        <ConfirmOrg
-                            nextStep={this.nextStep}
-                            prevStep={this.prevStep}
-                            values={values}
-                        />
-                    )
-                case 4:
-                    return (
-                        <SuccessOrg />
-                    )
+                // case 3:
+                //     return (
+                //         <ConfirmOrg
+                //             nextStep={this.nextStep}
+                //             prevStep={this.prevStep}
+                //             values={values}
+                //         />
+                //     )
+                // case 4:
+                //     return (
+                //         <SuccessOrg />
+                //     )
 
                 default:
                     console.log("err")

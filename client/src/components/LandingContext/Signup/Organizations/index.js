@@ -1,5 +1,4 @@
 import React from 'react'
-import './style.css'
 import LandingNav from '../../../Navs/LandingNav';
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
@@ -14,12 +13,12 @@ const Organizations = () => {
 	return (
 		<>
 			<Wrapper>
-				<img src='/images/group-pic.jpg' alt='' />
-				<Welcome />
+				
+			
 				<Container maxWidth="sm">
-					<Box m={10} >
-						<Card xs={6} style={{ alignItems: 'center', background: 'linear-gradient(45deg, #c54949 30%, #222831 90% )',borderRadius: '10%' }}>
-							<LandingNav />
+					<Box m={1} >
+						<Card xs={6} style={{ alignItems: 'center', background: 'linear-gradient(45deg, #c54949 30%, #222831 90% )' }}>
+							
 							<CardContent>
 								<OrgForm />
 							</CardContent>

@@ -3,10 +3,6 @@ import {ThemeProvider as MuiThemeProvider} from "@material-ui/core/styles";
 import Textfield from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
 
-
-
-
-
 export class FormPersonalDetails extends Component {
     continue = (e) => {
         e.preventDefault();
@@ -64,8 +60,6 @@ export class FormPersonalDetails extends Component {
                         // style={styles.button}
                         onClick={this.continue}
                     >Continue</Button>
-                    
-
                 </form>
             </MuiThemeProvider>
         )

@@ -43,12 +43,12 @@ export class UserForm extends Component {
     //handleinput field
 
     handleChange = input => (e) => {
-        this.setState({ [input]: e.target.value });
+        this.setState({ [input]: e.target.values });
     }
-    handleSubmit(event) {
+    handleSubmit(e) {
         console.log('sign-up handleSubmit, username: ')
         console.log(this.state.username)
-        event.preventDefault()
+        e.preventDefault()
 
         axios.post('/api/users', {
             username: this.state.username,
