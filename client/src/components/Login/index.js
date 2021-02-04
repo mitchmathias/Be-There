@@ -7,8 +7,9 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import LandingNav from '../Navs/LandingNav'
-
+import TextField from '@material-ui/core/TextField';
 import Wrapper from '../Wrapper'
+
 
 class Login extends Component {
 
@@ -18,10 +19,9 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            // redirectTo: null
         }
         this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onchangePassword = this.onchangePassword.bind(this);
+        this.onChangePassword = this.onChangePassword.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
     }
@@ -32,7 +32,7 @@ class Login extends Component {
         });
     }
 
-    onchangePassword(e) {
+    onChangePassword(e) {
         this.setState({
             password: e.target.value
         });
@@ -74,26 +74,21 @@ class Login extends Component {
         } else {
             return (
                 <Wrapper>
-                    <img src='/images/group-pic.jpg' alt=''/>
+                    <img src='/images/group-pic.jpg' alt='' />
                     <Welcome />
-                    <LandingNav />
                     <Container>
                         <Box>
                             <div className="row d-flex justify-content-center mb-3">
-                                <Card>
+                                <Card style={{ alignItems: 'center' }}>
                                     <div className="card-body">
-                                        <h1 className="card-title">Login</h1>
+                                    <LandingNav />
                                         <form onSubmit={this.onSubmit} className="form-horizontal">
                                             <div className="form-group">
                                                 <div className=" col-mr-auto">
-                                                    <label className="form-label" htmlFor="username"><h4>Username:</h4></label>
-                                                </div>
-                                                <div className=" col-mr-auto">
-                                                    <input className="form-input"
-                                                        type="text"
-                                                        id="username"
-                                                        name="username"
-                                                        placeholder="Username"
+                                                    <TextField
+                                                        id="outlined-search"
+                                                        label="Username"
+                                                        variant="outlined"
                                                         value={this.state.username}
                                                         onChange={this.onChangeUsername}
                                                     />
@@ -101,16 +96,13 @@ class Login extends Component {
                                             </div>
                                             <div className="form-group">
                                                 <div className=" col-mr-auto">
-                                                    <label className="form-label" htmlFor="password"><h4>Password:</h4></label>
-                                                </div>
-                                                <div className=" col-mr-auto">
-                                                    <input className="form-input"
-                                                        placeholder="password"
-                                                        id="password"
+                                                    <TextField
+                                                        id="outlined-search"
+                                                        label="Password"
+                                                        variant="outlined"
                                                         type="password"
-                                                        name="password"
                                                         value={this.state.password}
-                                                        onChange={this.onchangePassword}
+                                                        onChange={this.onChangePassword}
                                                     />
                                                 </div>
                                             </div>
@@ -118,7 +110,6 @@ class Login extends Component {
                                                 <div className="">
                                                     <button
                                                         className="btn btn-primary  col-mr-auto col-mb-auto"
-                                                        onClick={this.onSubmit}
                                                         variant='success'
                                                         color="primary"
                                                         type="submit"><h5>Login</h5>
@@ -131,7 +122,8 @@ class Login extends Component {
                             </div>
                         </Box>
                     </Container>
-                </Wrapper>)
+                </Wrapper>
+            )
         }
     }
 }

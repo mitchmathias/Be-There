@@ -8,10 +8,13 @@ import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
+import TextField from '@material-ui/core/TextField';
 
 class Signup extends Component {
-	constructor() {
-		super()
+
+	constructor(props) {
+		super(props)
+
 		this.state = {
 			username: '',
 			password: '',
@@ -22,13 +25,50 @@ class Signup extends Component {
 			location: ''
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
-		this.handleChange = this.handleChange.bind(this)
+		this.onChangeFirstName = this.onChangeFirstName.bind(this)
+		this.onChangeLastName = this.onChangeLastName.bind(this)
+		this.onChangeEmail = this.onChangeEmail.bind(this)
+		this.onChangeUserName = this.onChangeUserName.bind(this)
+		this.onChangePassword = this.onChangePassword.bind(this)
+		this.onChangeConfirm = this.onChangeConfirm.bind(this)
 	}
-	handleChange(event) {
-		this.setState({
-			[event.target.name]: event.target.value
-		})
+
+	onChangeFirstName(e) {
+        this.setState({
+            firstName: e.target.value
+        });
+    }
+
+    onChangeLastName(e) {
+        this.setState({
+            lastName: e.target.value
+        });
 	}
+	
+	onChangeEmail(e) {
+        this.setState({
+            email: e.target.value
+        });
+	}
+	
+	onChangeUserName(e) {
+        this.setState({
+            username: e.target.value
+        });
+	}
+
+	onChangePassword(e) {
+        this.setState({
+            password: e.target.value
+        });
+	}
+
+	onChangeConfirm(e) {
+        this.setState({
+            confirmPassword: e.target.value
+        });
+    }
+
 	handleSubmit(event) {
 		console.log('sign-up handleSubmit, username: ')
 		console.log(this.state.username)
@@ -62,112 +102,85 @@ class Signup extends Component {
 
 	render() {
 		if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        } else {
-		return (
-			<Wrapper>
-			 <img src='/images/group-pic.jpg' alt=''/>
-			<Welcome />
-			<LandingNav />
-				<Container>
-					<Box>
-						<div className="row d-flex justify-content-center mb-3">
-							<Card style={{ alignItems: 'center' }}>
-								<div className="card-body">
-									<h1 className="card-title">Sign up</h1>
-									<form className="form-horizontal">
-										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="firstName"><h4>First Name:</h4> </label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													placeholder="First Name"
-													type="firstName"
-													name="firstName"
+			return <Redirect to={{ pathname: this.state.redirectTo }} />
+		} else {
+			return (
+				<Wrapper>
+					<img src='/images/group-pic.jpg' alt='' />
+					<Welcome />
+					<Container>
+						<Box>
+							<div className="row d-flex justify-content-center mb-3">
+								<Card>
+									<div className="card-body ml-auto">
+										<LandingNav />
+										<form className="form-horizontal">
+											<div className="form-group">
+
+												<TextField
+													id="outlined-search"
+													label="First Name"
+													variant="outlined"
 													value={this.state.firstName}
-													onChange={this.handleChange}
-													required
+													onChange={this.onChangeFirstName}
 												/>
 											</div>
-										</div>
-										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="lastName"><h4>Last Name:</h4> </label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													placeholder="Last Name"
-													type="lastName"
-													name="lastName"
+											<div className="form-group">
+
+												<TextField
+													id="outlined-search"
+													label="Last Name"
+													variant="outlined"
 													value={this.state.lastName}
-													onChange={this.handleChange}
-													required
+													onChange={this.onChangeLastName}
+
 												/>
+
 											</div>
-										</div>
-										<div className="form-group">
-											<div className="col-mb-auto">
-												<label className="form-label" htmlFor="email"><h4>Email:</h4></label>
-											</div>
-											<div className="col-mb-auto">
-												<input className="form-input"
-													type="text"
-													id="email"
-													name="email"
-													placeholder="Email"
+											<div className="form-group">
+
+												<TextField
+													id="outlined-search"
+													label="Email"
+													variant="outlined"
 													value={this.state.email}
-													onChange={this.handleChange}
-													required
+													onChange={this.onChangeEmail}
+
 												/>
 											</div>
-										</div>
-										<div className="form-group">
 											<div className="form-group">
-												<div className="col-mb-auto">
-													<label className="form-label" htmlFor="username"><h4>Username:</h4></label>
-												</div>
-												<div className="col-mb-auto">
-													<input className="form-input"
-														type="text"
-														id="username"
-														name="username"
-														placeholder="Username"
+												<div className="form-group">
+													<TextField
+														id="outlined-search"
+														label="UserName"
+														variant="outlined"
 														value={this.state.username}
-														onChange={this.handleChange}
+														onChange={this.onChangeUserName}
 													/>
 												</div>
-											</div>
-											<div className="form-group">
-												<div className="col-mb-auto">
-													<label className="form-label" htmlFor="password"><h4>Password:</h4></label>
+												<div className="form-group">
+													<div className="col-mb-auto">
+														<TextField
+															id="outlined-search"
+															label="Password"
+															variant="outlined"
+															type="password"
+															value={this.state.password}
+															onChange={this.onChangePassword}
+														/>
+													</div>
 												</div>
-												<div className="col-mb-auto">
-													<input className="form-input"
-														placeholder="Password"
+												<div className="form-group">
+													<TextField
+														id="outlined-search"
+														label="Confirm Password"
+														variant="outlined"
 														type="password"
-														name="password"
-														value={this.state.password}
-														onChange={this.handleChange}
-													/>
-												</div>
-											</div>
-											<div className="form-group">
-												<div className="col-mb-auto">
-													<label className="form-label" htmlFor="confirmPassword"><h4>Confirm Password:</h4> </label>
-												</div>
-												<div className="col-mb-auto">
-													<input className="form-input"
-														placeholder="Confirm Password"
-														type="password"
-														name="confirmPassword"
 														value={this.state.confirmPassword}
-														onChange={this.handleChange}
+														onChange={this.onChangeConfirm}
 													/>
 												</div>
-											</div>
-											<div className="form-group">
-												<div className="">
+												<div className="form-group">
 													<button
 														className="btn btn-primary col-mb-auto"
 														onClick={this.handleSubmit}
@@ -175,17 +188,16 @@ class Signup extends Component {
 													><h5>Sign up</h5></button>
 												</div>
 											</div>
-										</div>
-									</form>
-								</div>
-							</Card>
-						</div>
-					</Box>
-				</Container>
-			</Wrapper>
-		)
+										</form>
+									</div>
+								</Card>
+							</div>
+						</Box>
+					</Container>
+				</Wrapper>
+			)
+		}
 	}
-}
 }
 
 export default Signup
