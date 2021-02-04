@@ -5,10 +5,10 @@ import './style.css'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
-import Welcome from '../Welcome'
-import LandingNav from '../Navs/LandingNav'
+import Welcome from '../../Welcome'
+import LandingNav from '../../Navs/LandingNav'
 
-import Wrapper from '../Wrapper'
+import Wrapper from '../../Wrapper'
 
 class Login extends Component {
 

@@ -5,8 +5,8 @@ import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
 import './App.css';
-import Signup from './components/Signup'
-import Login from './components/Login'
+import Signup from './components/LandingContext/Signup/Volunteers'
+import Login from './components/LandingContext/Login'
 import axios from 'axios'
 import Footer from './components/Footer';
 import Home from './pages/home';
