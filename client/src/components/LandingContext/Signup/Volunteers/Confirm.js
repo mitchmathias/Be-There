@@ -19,41 +19,41 @@ export class Confirm extends Component {
     }
 
     render() {
-        const { values: { firstName, lastName, email, city, username } } = this.props;
+        const { values: { firstName, lastName, email, city, username } } = this.props
 
 
         return (
-            <MuiThemeProvider>
+            // <MuiThemeProvider>
                 <form >
-                    <h1> Confirm user Data</h1>
+                    <h4> Confirm Info</h4>
                     <List>
                         <ListItem>
                             <ListItemText
-                                primary="First Name"
-                                secondary={firstName}
+                                primary="First Name: "
+                                secondary={firstName} 
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
-                                primary="Last Name"
+                                primary="Last Name: "
                                 secondary={lastName}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
-                                primary="Email"
+                                primary="Email: "
                                 secondary={email}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
-                                primary="UserName"
+                                primary="User name: "
                                 secondary={username}
                             />
                         </ListItem>
                         <ListItem>
                             <ListItemText
-                                primary="city"
+                                primary="City: "
                                 secondary={city}
                             />
                         </ListItem>
@@ -72,11 +72,11 @@ export class Confirm extends Component {
                         color="primary"
                         style={styles.button}
                         onClick={this.continue}
-                    >Continue</Button>
+                    >Submit</Button>
                    
 
                 </form>
-            </MuiThemeProvider>
+            // </MuiThemeProvider>
         )
     }
 }

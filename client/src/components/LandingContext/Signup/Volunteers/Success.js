@@ -17,12 +17,9 @@ export class Success extends Component {
     }
 
     render() {
-
-
         return (
             <MuiThemeProvider>
-                    <h1> Thank You for Joining</h1>   
-               
+                    <h1> Thank You for Joining</h1>       
             </MuiThemeProvider>
         )
     }

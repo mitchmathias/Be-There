@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import {ThemeProvider as MuiThemeProvider} from "@material-ui/core/styles";
-import Textfield from "@material-ui/core/TextField";
+// import {ThemeProvider as MuiThemeProvider} from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
 
-
+import Card from '@material-ui/core/Card'
 
 
 export class FormUserDetails extends Component {
@@ -16,54 +16,62 @@ export class FormUserDetails extends Component {
 
     render() {
         const { values, handleChange } = this.props;
-       
+
         return (
-            <MuiThemeProvider>
-                <form >
-                    <h1> Enter User Details</h1>
-                    <Textfield
-                        varient = "contained"
-                        id="Enter first Name"
+            // <MuiThemeProvider>
+            <form className="justify-content-center mb-3">
+                <h4>User Details</h4>
+                <div className="form-group">
+                    <TextField
+                        varient="outlined"
+                        id="outlined-search"
                         label="First Name"
                         onChange={handleChange('firstName')}
                         defaultValue={values.firstName}
-                       
+
                     />
-                    <br />
-                    <Textfield
-                      varient = "contained"
+                </div>
+                <div className="form-group">
+                    <TextField
+                        varient="contained"
                         id="Enter last Name"
                         label="Last Name"
                         onChange={handleChange('lastName')}
                         defaultValue={values.lastName}
                     />
-                    <br />
-                    <Textfield
-                      varient = "contained"
+                </div>
+                <div className="form-group">
+                    <TextField
+                        varient="contained"
                         id="Enter email"
                         label="Email"
                         onChange={handleChange('email')}
                         defaultValue={values.email}
                     />
-                    <br />
-                    <Textfield
-                      varient = "contained"
+                </div>
+                <div className="form-group">
+                    <TextField
+                        varient="contained"
                         id="Enter your city"
                         label="City"
                         onChange={handleChange('city')}
                         defaultValue={values.city}
                     />
-                    <br />
+                </div>
+                <div className="form-group">
                     <Button
                         varient="contained"
                         label="Continue"
-                        color= "primary"
+                        color="primary"
                         // style={styles.button}
-                        onClick={this.continue}
-                    >Continue</Button>
+                        onClick={this.continue} >
 
-                </form>
-            </MuiThemeProvider>
+                        Continue </Button>
+                </div>
+
+            </form>
+
+            // </MuiThemeProvider>
         )
     }
 }

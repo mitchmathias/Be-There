@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ThemeProvider as MuiThemeProvider} from "@material-ui/core/styles";
+// import {ThemeProvider as MuiThemeProvider} from "@material-ui/core/styles";
 import Textfield from "@material-ui/core/TextField";
 import Button from '@material-ui/core/Button';
 
@@ -19,17 +19,20 @@ export class FormPersonalDetails extends Component {
        
         return (
       
-            <MuiThemeProvider>
-                <form >
-                    <h1>Enter Personal Details</h1>
+            // <MuiThemeProvider>
+            <>
+                    <h4>Personal Details</h4>
+                
+                    <div className="form-group">
                     <Textfield
-                        varient = "contained"
-                        id="Enter UserName"
-                        label="UserName"
+                        varient = "outlined"
+                        id="outlined-search"
+                        label="Username"
                         onChange={handleChange('username')}
                         defaultValue={values.username}
                     />
-                    <br />
+                    </div>
+                    <div className="form-group">
                     <Textfield
                       varient = "contained"
                         id="Enter a Password"
@@ -37,15 +40,17 @@ export class FormPersonalDetails extends Component {
                         onChange={handleChange('password')}
                         defaultValue={values.password}
                     />
-                    <br />
+                    </div>
+                    <div className="form-group">
                     <Textfield
                       varient = "contained"
                         id="Confrim Password"
-                        label="ConfrimPassword"
+                        label="Confrim Password"
                         onChange={handleChange('confirmpassword')}
                         defaultValue={values.confirmPassword}
                     />
-                    <br />
+                    </div>
+                    <div className="form-group">
                     <Button
                         varient="contained"
                         label="Continue"
@@ -60,8 +65,10 @@ export class FormPersonalDetails extends Component {
                         // style={styles.button}
                         onClick={this.continue}
                     >Continue</Button>
-                </form>
-            </MuiThemeProvider>
+                    </div>
+                
+                </>
+            // </MuiThemeProvider>
         )
     }
 }

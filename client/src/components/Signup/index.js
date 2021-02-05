@@ -9,6 +9,7 @@ import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
 import TextField from '@material-ui/core/TextField';
+import SignUpStepper from './userStepper/stepper';
 
 class Signup extends Component {
 
@@ -112,9 +113,10 @@ class Signup extends Component {
 						<Box>
 							<div className="row d-flex justify-content-center mb-3">
 								<Card>
-									<div className="card-body ml-auto">
+									<div className="card-body">
 										<LandingNav />
-										<form className="form-horizontal">
+										{/* <SignUpStepper /> */}
+										<form className="form-horizontal" autoComplete="off">
 											<div className="form-group">
 
 												<TextField
@@ -156,6 +158,7 @@ class Signup extends Component {
 														variant="outlined"
 														value={this.state.username}
 														onChange={this.onChangeUserName}
+														autoComplete="off"
 													/>
 												</div>
 												<div className="form-group">
@@ -167,6 +170,7 @@ class Signup extends Component {
 															type="password"
 															value={this.state.password}
 															onChange={this.onChangePassword}
+															autoComplete="off"
 														/>
 													</div>
 												</div>

@@ -1,15 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import Box from '@material-ui/core/Box'
-import Container from '@material-ui/core/Container'
 import Card from '@material-ui/core/Card'
 import './style.css'
 
 const LandingNav = () => {
     return (
-        <Container>
-            <Box component="span" m={1}>
-                <div className="row d-flex justify-content-center navbox">
+
+                <div className="row d-flex justify-content-center navbox mb-3">
                     <Card>
                             <div className="card-body">
                                 <nav className="navbar-home navbar-expand">
@@ -30,8 +27,6 @@ const LandingNav = () => {
                         
                     </Card>
                 </div>
-            </Box>
-        </Container>
     )
 };
 

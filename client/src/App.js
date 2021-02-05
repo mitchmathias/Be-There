@@ -5,7 +5,7 @@ import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
 import './App.css';
-import SignUpForm from './components/LandingContext/Signup/'
+import SignUpForm from './components/LandingContext/Signup'
 import Login from './components/LandingContext/Login'
 import axios from 'axios'
 import Footer from './components/Footer';

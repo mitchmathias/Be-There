@@ -11,14 +11,10 @@ import { CardContent } from '@material-ui/core';
 
 const Organizations = () => {
 	return (
-		<>
 			<Wrapper>
-				
-			
 				<Container maxWidth="sm">
 					<Box m={1} >
 						<Card xs={6} style={{ alignItems: 'center', background: 'linear-gradient(45deg, #c54949 30%, #222831 90% )' }}>
-							
 							<CardContent>
 								<OrgForm />
 							</CardContent>
@@ -26,7 +22,6 @@ const Organizations = () => {
 					</Box>
 				</Container>
 			</Wrapper>
-		</>
 	)
 }
 

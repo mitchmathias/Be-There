@@ -9,8 +9,8 @@ import axios from 'axios';
 
 
 export class UserForm extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             step: 1,
             firstName: '',
