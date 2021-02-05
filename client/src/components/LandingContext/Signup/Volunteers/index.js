@@ -4,11 +4,9 @@ import { CardContent } from '@material-ui/core';
 
 const Volunteers = () => {
 	return (
-		<>
-				<CardContent>
-					<UserForm />
-				</CardContent>
-		</>
+		<CardContent>
+			<UserForm />
+		</CardContent>
 	)
 }
 

@@ -29,28 +29,15 @@ export class SignUpSwitch extends Component {
 		switch (signUp) {
 			case 1:
 				return (
-					<>
-
-						<Card xs={8} style={{ alignItems: 'center', background: 'linear-gradient(45deg, #c54949 30%, #222831 90% )' }}>
-
-							<CardContent>
-								<Volunteers/>
-							</CardContent>
-						</Card>
-
-					</>
-
+					<Card style={{ justifyContent: 'center' }}>
+						<Volunteers />
+					</Card>
 				)
 			case 2:
 				return (
-					<>
-						
-								<Card xs={6} style={{ alignItems: 'center', background: 'linear-gradient(45deg, #c54949 30%, #222831 90% )' }}>
-									<CardContent>
-										<Organizations />
-									</CardContent>
-								</Card>
-					</>
+					<Card >
+						<Organizations />
+					</Card>
 				)
 			default:
 		}
