@@ -5,7 +5,8 @@ import CreateEvent from './components/CreateEvent';
 import MyProfile from './components/MyProfile';
 import Landing from './pages/landing'
 import './App.css';
-import SignUpForm from './components/LandingContext/Signup'
+// import SignUp from './components/LandingContext/Signup/Volunteers/fullPeice.js'
+import Signup from './components/Signup'
 import Login from './components/LandingContext/Login'
 import axios from 'axios'
 import Footer from './components/Footer';
@@ -68,10 +69,8 @@ class App extends Component {
           <Route path='/login' render={(props) =>
             <Login {...props} updateUser={this.updateUser} />
           } />
-          <Route path='/signup' render={(props) =>
-            <SignUpForm {...props} updateUser={this.updateUser} />
-          } />
-          
+          <Route path='/signup' component={Signup}/>
+                    
           <Route exact path='/home' component={Home} />
           <Route exact path='/planEvents' component={CreateEvent} />
           <Route exact path='/myProfile' component={MyProfile} />
