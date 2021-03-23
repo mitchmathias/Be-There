@@ -9,7 +9,7 @@ import Card from '@material-ui/core/Card'
 import Welcome from '../Welcome'
 import Wrapper from '../Wrapper'
 import TextField from '@material-ui/core/TextField';
-import SignUpStepper from './userStepper/stepper';
+// import SignUpStepper from './userStepper/stepper';
 
 class Signup extends Component {
 
